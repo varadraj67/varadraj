@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rawmat | Next-Generation Procurement & Supply Chain</title>
+    <meta name="description" content="Redefining Raw Material Sourcing Across the Globe. Rawmat connects industries directly to verified global sources.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#030712', // Ultra dark luxury
+                            800: '#0B132B',
+                            700: '#1C2541',
+                        },
+                        gold: {
+                            300: '#FDE08B',
+                            400: '#E8D08D',
+                            500: '#C5A059', // Primary Gold
+                            600: '#A38047',
+                            700: '#826035',
+                        },
+                        surface: {
+                            50: '#FCFCFD',
+                            100: '#F4F4F6',
+                            200: '#E5E5EA',
+                        }
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 0 20px rgba(197, 160, 89, 0.3)',
+                        'gold-glow-lg': '0 0 40px rgba(197, 160, 89, 0.4)',
+                        'premium': '0 20px 40px -10px rgba(3, 7, 18, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+    /* =========================================
+       BASE & SCROLLBAR
+       ========================================= */
+    body { background-color: #FCFCFD; color: #030712; }
+    
+    @media (min-width: 768px) {
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #030712; }
+        ::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 0px; }
+        ::-webkit-scrollbar-thumb:hover { background: #E8D08D; }
+    }
+    ::selection { background: #C5A059; color: #030712; }
+
+    /* =========================================
+       TYPOGRAPHY GRADIENTS
+       ========================================= */
+    .text-gradient-gold {
+        background: linear-gradient(135deg, #E8D08D 0%, #C5A059 40%, #A38047 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* =========================================
+       GLASSMORPHISM UTILITIES
+       ========================================= */
+    .glass-nav {
+        background: rgba(252, 252, 253, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+    }
+    .glass-dark {
+        background: rgba(3, 7, 18, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(197, 160, 89, 0.2);
+    }
+    .glass-light {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(197, 160, 89, 0.1);
+    }
+
+    /* =========================================
+       COMPLEX GRADIENTS
+       ========================================= */
+    .bg-gradient-gold { background: linear-gradient(135deg, #A38047 0%, #C5A059 50%, #E8D08D 100%); }
+    .hero-overlay { background: linear-gradient(to right, rgba(3, 7, 18, 0.95) 0%, rgba(3, 7, 18, 0.7) 50%, rgba(3, 7, 18, 0.3) 100%); }
+    .card-overlay { background: linear-gradient(to top, rgba(3, 7, 18, 0.95) 0%, rgba(3, 7, 18, 0.4) 50%, transparent 100%); }
+
+    /* =========================================
+       ANIMATIONS
+       ========================================= */
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .animate-marquee { display: flex; width: 200%; animation: marquee 30s linear infinite; }
+    @media (max-width: 768px) { .animate-marquee { animation-duration: 20s; } }
+    .animate-marquee:hover { animation-play-state: paused; }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+
+    @keyframes pulse-ring {
+        0% { transform: scale(0.8); opacity: 0.5; }
+        100% { transform: scale(2.5); opacity: 0; }
+    }
+    .pulse-circle::before {
+        content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+        background-color: #C5A059; border-radius: 50%; z-index: -1;
+        animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    /* =========================================
+       HOVER EFFECTS
+       ========================================= */
+    .img-zoom-wrapper { overflow: hidden; }
+    .img-zoom-target { transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .hover-lift { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; }
+    
+    .btn-premium {
+        position: relative; overflow: hidden; z-index: 1;
+        transition: all 0.4s ease;
+    }
+    .btn-premium::after {
+        content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
+        background-color: #030712; z-index: -2;
+    }
+    .btn-premium::before {
+        content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 100%;
+        background: linear-gradient(135deg, #A38047 0%, #C5A059 50%, #E8D08D 100%);
+        transition: all 0.4s ease; z-index: -1;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .group:hover .img-zoom-target { transform: scale(1.1); }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -10px rgba(197, 160, 89, 0.2); }
+        .btn-premium:hover::before { width: 100%; }
+        .btn-premium:hover { color: #030712 !important; border-color: #C5A059; }
+    }
+
+    @media (max-width: 1024px) {
+        .commodity-specs { max-height: 500px; opacity: 1; margin-top: 1rem; }
+    }
+    @media (min-width: 1025px) {
+        .commodity-specs { max-height: 0; opacity: 0; transition: all 0.5s ease; overflow: hidden; }
+        .group:hover .commodity-specs { max-height: 200px; opacity: 1; margin-top: 1rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .animate-marquee, .animate-float, .pulse-circle::before { animation: none !important; }
+        .img-zoom-target, .hover-lift, .commodity-specs, .btn-premium::before { transition: none !important; }
+    }
+    /* =========================================
+       NEW HERO STYLES (Dotted BG & Sunset Gradient)
+       ========================================= */
+    .text-gradient-sunset {
+        background: linear-gradient(to right, #2196F3, #75B726, #C19A3B);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .dotted-bg {
+        background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+</style>
+</head>
+<body class="antialiased font-sans">
+
+  <div class="bg-rawNavy-900 border-b border-rawGold-500/30 text-rawGold-400 text-[10px] md:text-[11px] uppercase tracking-[0.2em] py-2 overflow-hidden relative z-[60]">
+        <div class="animate-marquee whitespace-nowrap flex items-center">
+            <div class="flex items-center gap-6 md:gap-8 px-4 md:px-8">
+                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> BRENT CRUDE: $84.50/bbl</span>
+                <span><i class="fa-solid fa-caret-down text-red-500 mr-1"></i> WTI CRUDE: $79.80/bbl</span>
+                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> GOLD: $4,504.43/oz</span>
+                <span><i class="fa-solid fa-caret-up text-rawBlue-500 mr-1"></i> COPPER: $4.50/lb</span>
+                <span><i class="fa-solid fa-caret-down text-red-500 mr-1"></i> WHEAT: $610.25/bu</span>
+                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> LNG (JKM): $10.45/MMBtu</span>
+                <span><i class="fa-solid fa-caret-up text-rawBlue-500 mr-1"></i> POLYMERS: $1,210/mt</span>
+            </div>
+            <div class="flex items-center gap-6 md:gap-8 px-4 md:px-8">
+                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> BRENT CRUDE: $84.50/bbl</span>
+                <span><i class="fa-solid fa-caret-down text-red-500 mr-1"></i> WTI CRUDE: $79.80/bbl</span>
+                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> GOLD:$4,504.43/oz</span>
+                <span><i class="fa-solid fa-caret-up text-rawBlue-500 mr-1"></i> COPPER: $4.50/lb</span>
+                <span><i class="fa-solid fa-caret-down text-red-500 mr-1"></i> WHEAT: $610.25/bu</span>
+                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> LNG (JKM): $10.45/MMBtu</span>
+                <span><i class="fa-solid fa-caret-up text-rawBlue-500 mr-1"></i> POLYMERS: $1,210/mt</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 top-8" id="navbar">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-24">
+                
+                <!-- Updated Logo Section -->
+                <a href="#" class="flex items-center gap-4 cursor-pointer z-50">
+                    <!-- TUMCHA LOGO ITHE TAKA (src madhe image cha path/naav dya) -->
+                    <img src="final logo.png" alt="Rawmat Logo" class="h-20 md:h-23 w-auto object-contain drop-shadow-lg">
+                    
+                    <!-- Jar tumhala logo sobat text pan hav asel tar khalcha code uncomment kara -->
+                    
+                     <div class="flex flex-col justify-center">
+                        <span class="font-serif font-bold text-3xl tracking-[0.2em] uppercase text-navy-900 leading-none">Raw<span class="text-gold-500">mat</span></span>
+                    </div> 
+                
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden xl:flex space-x-12 items-center font-semibold text-xs tracking-widest uppercase">
+                    <a href="#about" class="text-navy-900 hover:text-gold-500 transition duration-300 py-10">About</a>
+                    <a href="#capabilities" class="text-navy-900 hover:text-gold-500 transition duration-300 py-10">Capabilities</a>
+                    <a href="#products" class="text-navy-900 hover:text-gold-500 transition duration-300 py-10">Products</a>
+                    <a href="#industries" class="text-navy-900 hover:text-gold-500 transition duration-300 py-10">Industries</a>
+                    <a href="#network" class="text-navy-900 hover:text-gold-500 transition duration-300 py-10">Global Network</a>
+                </div>
+
+                <!-- Desktop Action Buttons -->
+                <div class="hidden lg:flex items-center gap-6">
+                    <div class="flex items-center gap-2 text-navy-900 font-bold text-xs cursor-pointer hover:text-gold-500 transition">
+                        <i class="fa-solid fa-globe"></i> EN
+                    </div>
+                    <div class="w-px h-6 bg-gray-300"></div>
+                    <a href="#contact" class="bg-gold-500 text-navy-900 px-8 py-3.5 font-bold tracking-widest uppercase text-xs hover:bg-navy-900 hover:text-gold-500 transition-all duration-300 shadow-gold-glow cursor-pointer">
+                        Partner With Us
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button class="xl:hidden text-navy-900 text-2xl focus:outline-none z-50 relative" id="mobile-menu-btn">
+                    <i class="fa-solid fa-bars-staggered transition-transform duration-300" id="mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown (Initially Hidden) -->
+        <div class="xl:hidden absolute top-full left-0 w-full bg-surface-50/95 backdrop-blur-xl border-b border-gold-500/20 shadow-premium transition-all duration-500 ease-in-out transform -translate-y-full opacity-0 invisible -z-10" id="mobile-menu">
+            <div class="flex flex-col px-6 py-10 space-y-6 font-semibold text-xs tracking-widest uppercase text-center">
+                <a href="#about" class="mobile-link text-navy-900 hover:text-gold-500 transition duration-300">About</a>
+                <a href="#capabilities" class="mobile-link text-navy-900 hover:text-gold-500 transition duration-300">Capabilities</a>
+                <a href="#products" class="mobile-link text-navy-900 hover:text-gold-500 transition duration-300">Products</a>
+                <a href="#industries" class="mobile-link text-navy-900 hover:text-gold-500 transition duration-300">Industries</a>
+                <a href="#network" class="mobile-link text-navy-900 hover:text-gold-500 transition duration-300">Global Network</a>
+                <div class="w-12 h-px bg-gold-500/50 mx-auto my-2"></div>
+                <a href="#contact" class="mobile-link bg-gold-500 text-navy-900 px-8 py-4 font-bold tracking-widest uppercase text-xs hover:bg-navy-900 hover:text-gold-500 transition-all duration-300 shadow-gold-glow mx-auto w-max">
+                    Partner With Us
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[900px] flex items-center justify-center overflow-hidden pt-20 bg-navy-800 dotted-bg">
+        
+        <div class="absolute inset-0 z-0 opacity-60">
+            <img src="Gemini_Generated_Image_adqlu8adqlu8adql.png" alt="Global Trade Hub" class="w-full h-full object-cover mix-blend-overlay animate-[pulse_20s_ease-in-out_infinite_alternate]" />
+            <div class="absolute inset-0 bg-navy-700/80"></div>
+        </div>
+        
+        <div class="relative z-10 w-full max-w-[100rem] mx-auto px-6 lg:px-12">
+            <div class="max-w-6xl" data-aos="fade-up" data-aos-duration="1200">
+                
+                <!-- Matching the Top Strip from the image -->
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-px bg-gold-500"></div>
+                    <span class="text-gold-500 font-bold tracking-[0.3em] text-[10px] sm:text-xs uppercase">
+                        Est. 2026 • Global Masters
+                    </span>
+                </div>
+                
+                <!-- Typography matching the image structure -->
+                <h1 class="text-5xl md:text-6xl lg:text-8xl font-serif font-bold text-white leading-[1.1] mb-6 md:mb-8 drop-shadow-2xl">
+                    <span class="text-white block">Architecting the</span>
+                    <span class="text-gradient-sunset italic block mt-2 pr-4">Future of Trade</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-300 font-light mb-12 max-w-3xl leading-relaxed border-l-2 border-gold-500/50 pl-6">
+                    Rawmat is a next-generation procurement and supply chain platform designed to simplify, optimize, and transform how industries access raw materials—globally and intelligently.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <a href="#products" class="w-full sm:w-auto bg-gradient-gold text-navy-900 px-12 py-5 font-bold tracking-widest uppercase text-sm shadow-gold-glow-lg hover:scale-105 transition-transform duration-300 text-center">
+                        Explore Categories
+                    </a>
+                    <a href="#capabilities" class="w-full sm:w-auto glass-dark text-white border border-gold-500/30 px-12 py-5 font-bold tracking-widest uppercase text-sm hover:bg-gold-500 hover:text-navy-900 transition-all duration-300 text-center">
+                        Discover Our Platform
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20">
+            <span class="text-gold-500 text-[10px] uppercase tracking-[0.3em] font-bold mb-3">Scroll to Discover</span>
+            <div class="w-px h-16 bg-white/20 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1/2 bg-gold-500 animate-[translateY_2s_ease-in-out_infinite]"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-navy-900 border-y border-gold-500/20 py-12 relative z-20 -mt-1 shadow-2xl">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-gold-500/10 text-center">
+                <div data-aos="fade-up" data-aos-delay="0" class="py-4 lg:py-0">
+                    <div class="text-2xl font-serif font-bold text-white mb-2"><i class="fa-solid fa-map-location-dot text-gold-500 mr-2"></i> Next Door</div>
+                    <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Making global procurement feel local, fast, and accessible.</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100" class="py-4 lg:py-0">
+                    <div class="text-2xl font-serif font-bold text-white mb-2"><i class="fa-solid fa-brain text-gold-500 mr-2"></i> Deep Intelligence</div>
+                    <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Understanding origin, routes, & market dynamics.</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="py-4 lg:py-0">
+                    <div class="text-2xl font-serif font-bold text-white mb-2"><i class="fa-solid fa-chart-line text-gold-500 mr-2"></i> Beyond Sourcing</div>
+                    <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Cost optimization & risk mitigation integrated.</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300" class="py-4 lg:py-0">
+                    <div class="text-2xl font-serif font-bold text-white mb-2"><i class="fa-solid fa-handshake-angle text-gold-500 mr-2"></i> Partnership</div>
+                    <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Not just trade. Trade + Knowledge.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 bg-surface-50 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-surface-100 transform skew-x-12 translate-x-32 z-0"></div>
+        
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <div class="lg:col-span-5 relative" data-aos="fade-right">
+                    <div class="absolute -top-10 -left-10 w-32 h-32 border-t-2 border-l-2 border-gold-500 z-0"></div>
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 border-b-2 border-r-2 border-gold-500 z-0"></div>
+                    <img src="image.png" alt="Science & Sourcing" class="relative z-10 w-full h-auto object-cover  duration-700">
+                    <div class="absolute -right-12 top-1/4 glass-light p-6 shadow-xl z-20 animate-float hidden md:block border-l-4 border-l-gold-500">
+                        <i class="fa-solid fa-bullseye text-3xl text-gold-500 mb-2"></i>
+                        <h4 class="font-bold text-navy-900">Deliver Certainty</h4>
+                        <p class="text-xs text-gray-500">Zero Guesswork</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 lg:pl-16" data-aos="fade-left">
+                    <h2 class="text-gold-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">About Rawmat</h2>
+                    <h3 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-navy-900 mb-8 leading-tight">End the endless search. <br>Deliver certainty.</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8 font-light">
+                        Rawmat is built on a simple yet powerful idea. We connect industries directly to verified global sources, combining deep market intelligence, logistics expertise, and material science insight to create a seamless procurement experience.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-navy-900 flex items-center justify-center rounded-none flex-shrink-0 text-gold-500">
+                                <i class="fa-solid fa-bolt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 uppercase tracking-wide text-sm mb-1">Efficiency</h4>
+                                <p class="text-gray-500 text-sm">Streamlined operations reducing overall procurement time.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-navy-900 flex items-center justify-center rounded-none flex-shrink-0 text-gold-500">
+                                <i class="fa-solid fa-eye text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 uppercase tracking-wide text-sm mb-1">Transparency</h4>
+                                <p class="text-gray-500 text-sm">Clear visibility into origin, pricing, and logistics.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-navy-900 flex items-center justify-center rounded-none flex-shrink-0 text-gold-500">
+                                <i class="fa-solid fa-shield-halved text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 uppercase tracking-wide text-sm mb-1">Reliability</h4>
+                                <p class="text-gray-500 text-sm">Consistent quality and guaranteed delivery timelines.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-navy-900 flex items-center justify-center rounded-none flex-shrink-0 text-gold-500">
+                                <i class="fa-solid fa-chess-knight text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 uppercase tracking-wide text-sm mb-1">Strategic Advantage</h4>
+                                <p class="text-gray-500 text-sm">Gaining an edge through cost and supply optimization.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="capabilities" class="py-32 bg-white">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+            <div class="text-center mb-24" data-aos="fade-up">
+                <h2 class="text-gold-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">Our Core Capabilities</h2>
+                <h3 class="text-4xl md:text-5xl font-serif font-bold text-navy-900">End-to-End Strategic Solutions</h3>
+                <div class="w-24 h-1 bg-gold-500 mx-auto mt-8"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-10 border border-gray-100 hover:border-gold-500 bg-surface-50 hover-lift group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-20 h-20 bg-white border border-gray-200 flex items-center justify-center mb-8 group-hover:bg-navy-900 group-hover:border-navy-900 transition-colors duration-300">
+                        <i class="fa-solid fa-boxes-stacked text-3xl text-gold-500"></i>
+                    </div>
+                    <h4 class="text-xl font-serif font-bold text-navy-900 mb-4">Raw Material Sourcing</h4>
+                    <ul class="text-gray-500 font-light leading-relaxed mb-6 text-sm list-disc pl-4 space-y-2">
+                        <li>Global supplier identification</li>
+                        <li>Direct manufacturer access</li>
+                        <li>Multi-origin sourcing</li>
+                    </ul>
+                </div>
+                
+                <div class="p-10 border border-gray-100 hover:border-gold-500 bg-surface-50 hover-lift group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-white border border-gray-200 flex items-center justify-center mb-8 group-hover:bg-navy-900 group-hover:border-navy-900 transition-colors duration-300">
+                        <i class="fa-solid fa-ship text-3xl text-gold-500"></i>
+                    </div>
+                    <h4 class="text-xl font-serif font-bold text-navy-900 mb-4">Supply Chain & Logistics</h4>
+                    <ul class="text-gray-500 font-light leading-relaxed mb-6 text-sm list-disc pl-4 space-y-2">
+                        <li>End-to-end logistics solutions</li>
+                        <li>Freight optimization</li>
+                        <li>Warehousing & distribution</li>
+                    </ul>
+                </div>
+                
+                <div class="p-10 border border-gray-100 hover:border-gold-500 bg-surface-50 hover-lift group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-white border border-gray-200 flex items-center justify-center mb-8 group-hover:bg-navy-900 group-hover:border-navy-900 transition-colors duration-300">
+                        <i class="fa-solid fa-chart-pie text-3xl text-gold-500"></i>
+                    </div>
+                    <h4 class="text-xl font-serif font-bold text-navy-900 mb-4">Market Intelligence</h4>
+                    <ul class="text-gray-500 font-light leading-relaxed mb-6 text-sm list-disc pl-4 space-y-2">
+                        <li>Price trends & forecasting</li>
+                        <li>Supply-demand analytics</li>
+                        <li>Risk assessment</li>
+                    </ul>
+                </div>
+                
+                <div class="p-10 border border-gray-100 hover:border-gold-500 bg-surface-50 hover-lift group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-white border border-gray-200 flex items-center justify-center mb-8 group-hover:bg-navy-900 group-hover:border-navy-900 transition-colors duration-300">
+                        <i class="fa-solid fa-flask text-3xl text-gold-500"></i>
+                    </div>
+                    <h4 class="text-xl font-serif font-bold text-navy-900 mb-4">Material Science Integration</h4>
+                    <ul class="text-gray-500 font-light leading-relaxed mb-6 text-sm list-disc pl-4 space-y-2">
+                        <li>Product suitability analysis</li>
+                        <li>Application-based recommendations</li>
+                        <li>Innovation-driven sourcing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-32 bg-navy-900 relative">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
+        
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20" data-aos="fade-up">
+                <div>
+                    <h2 class="text-gold-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">Product Categories</h2>
+                    <h3 class="text-4xl md:text-6xl font-serif font-bold text-white">Core Material Sourcing</h3>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+                <div class="group relative h-[450px] img-zoom-wrapper bg-black" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" alt="Chemicals" class="absolute inset-0 w-full h-full object-cover opacity-50 img-zoom-target mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-70 transition-all duration-700">
+                    <div class="absolute inset-0 card-overlay"></div>
+                    <div class="absolute inset-0 border border-gold-500/0 group-hover:border-gold-500/50 transition-colors duration-500 z-10"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full z-20 flex flex-col justify-end h-full">
+                        <span class="text-gold-500 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">Category 01</span>
+                        <h4 class="text-3xl font-serif text-white mb-2">Chemicals</h4>
+                        <p class="text-gray-300 text-sm font-light mb-4">Specialty & industrial chemicals for multiple applications.</p>
+                        <button class="text-gold-500 text-xs font-bold tracking-widest uppercase hover:text-white transition text-left mt-auto">Explore Catalog <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+
+                <div class="group relative h-[450px] img-zoom-wrapper bg-black" data-aos="fade-up" data-aos-delay="100">
+                    <img src="fertilizer.avif" alt="Fertilizers" class="absolute inset-0 w-full h-full object-cover opacity-50 img-zoom-target mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-70 transition-all duration-700">
+                    <div class="absolute inset-0 card-overlay"></div>
+                    <div class="absolute inset-0 border border-gold-500/0 group-hover:border-gold-500/50 transition-colors duration-500 z-10"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full z-20 flex flex-col justify-end h-full">
+                        <span class="text-gold-500 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">Category 02</span>
+                        <h4 class="text-3xl font-serif text-white mb-2">Fertilizers</h4>
+                        <p class="text-gray-300 text-sm font-light mb-4">Global sourcing of advanced agri-nutrient solutions.</p>
+                        <button class="text-gold-500 text-xs font-bold tracking-widest uppercase hover:text-white transition text-left mt-auto">Explore Catalog <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+
+                <div class="group relative h-[450px] img-zoom-wrapper bg-black" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://plus.unsplash.com/premium_photo-1733306459429-072d73ef6e93?w=800&auto=format&fit=crop&q=60" alt="Petrochemicals" class="absolute inset-0 w-full h-full object-cover opacity-50 img-zoom-target mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-70 transition-all duration-700">
+                    <div class="absolute inset-0 card-overlay"></div>
+                    <div class="absolute inset-0 border border-gold-500/0 group-hover:border-gold-500/50 transition-colors duration-500 z-10"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full z-20 flex flex-col justify-end h-full">
+                        <span class="text-gold-500 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">Category 03</span>
+                        <h4 class="text-3xl font-serif text-white mb-2">Petrochemicals</h4>
+                        <p class="text-gray-300 text-sm font-light mb-4">Bulk and specialty petrochemical supply chains.</p>
+                        <button class="text-gold-500 text-xs font-bold tracking-widest uppercase hover:text-white transition text-left mt-auto">Explore Catalog <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="industries" class="py-24 bg-surface-50 border-b border-gray-200">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-gold-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">Sectors</h2>
+                <h3 class="text-4xl font-serif font-bold text-navy-900 mb-4">Industries We Serve</h3>
+                <p class="text-gray-500 max-w-2xl mx-auto text-sm">Empowering a diverse range of global markets with precision sourcing.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group" data-aos="zoom-in" data-aos-delay="0">
+                    <i class="fa-solid fa-utensils text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
+                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">Food & Bev</span>
+                </div>
+                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group" data-aos="zoom-in" data-aos-delay="50">
+                    <i class="fa-solid fa-shirt text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
+                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">Textiles & Apparel</span>
+                </div>
+                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fa-solid fa-cart-shopping text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
+                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">FMCG</span>
+                </div>
+                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fa-solid fa-pills text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
+                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">Pharmaceuticals</span>
+                </div>
+                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fa-solid fa-tractor text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
+                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">Agriscience</span>
+                </div>
+                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group" data-aos="zoom-in" data-aos-delay="250">
+                    <i class="fa-solid fa-wind text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
+                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">Industrial Gases</span>
+                </div>
+                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group col-span-2 md:col-span-4 lg:col-span-1" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fa-solid fa-dna text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
+                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">Biotechnology</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="network" class="py-32 bg-surface-100 relative overflow-hidden">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20" data-aos="fade-up">
+                <div>
+                    <h2 class="text-gold-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">Global Network</h2>
+                    <h3 class="text-4xl md:text-5xl font-serif font-bold text-navy-900 mb-6">The Science of Supply Chain</h3>
+                    <p class="text-gray-600 font-light mb-6">
+                        At Rawmat, procurement is not transactional—it’s analytical. Our network spans manufacturers, processors, traders, and logistics providers across Asia, Middle East, Europe, and the Americas.
+                    </p>
+                    <p class="text-gray-600 font-light mb-8">
+                        We apply data-driven sourcing models, cost-to-serve optimization, route efficiency mapping, and inventory intelligence.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-navy-900 text-gold-500 px-4 py-2 text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check text-green-500 mr-2"></i> Reduced Cost</span>
+                        <span class="bg-navy-900 text-gold-500 px-4 py-2 text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check text-green-500 mr-2"></i> Faster Turnaround</span>
+                        <span class="bg-navy-900 text-gold-500 px-4 py-2 text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check text-green-500 mr-2"></i> Higher Reliability</span>
+                    </div>
+                </div>
+                
+                <div class="relative w-full h-[500px] bg-navy-900 rounded-sm shadow-2xl overflow-hidden border border-gold-500/20" data-aos="zoom-in">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map" class="absolute inset-0 w-full h-full object-cover opacity-20 filter invert sepia hue-rotate-[180deg] saturate-[2]">
+                    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+                    <div class="absolute top-[45%] left-[68%] group">
+                        <div class="w-4 h-4 bg-gold-500 rounded-full relative pulse-circle shadow-gold-glow cursor-pointer"></div>
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white px-3 py-1 rounded-sm text-xs font-bold text-navy-900 shadow-xl z-30 whitespace-nowrap">
+                            🇮🇳 Mumbai (Launch)
+                        </div>
+                    </div>
+                    
+                    <div class="absolute top-[40%] left-[62%] group">
+                        <div class="w-4 h-4 bg-gold-500 rounded-full relative pulse-circle shadow-gold-glow cursor-pointer"></div>
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white px-3 py-1 rounded-sm text-xs font-bold text-navy-900 shadow-xl z-30 whitespace-nowrap">
+                            🇦🇪 Dubai (Launch)
+                        </div>
+                    </div>
+                    
+                    <div class="absolute top-[25%] left-[48%]"><div class="w-2 h-2 bg-white/50 rounded-full"></div></div>
+                    <div class="absolute top-[35%] left-[20%]"><div class="w-2 h-2 bg-white/50 rounded-full"></div></div>
+                    <div class="absolute top-[55%] left-[78%]"><div class="w-2 h-2 bg-white/50 rounded-full"></div></div>
+
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: 10;">
+                        <path d="M 68% 45% Q 65% 35% 62% 40%" fill="transparent" stroke="rgba(197, 160, 89, 0.6)" stroke-width="2" stroke-dasharray="4,4" class="animate-[dash_20s_linear_infinite]" />
+                    </svg>
+                    <style>
+                        @keyframes dash { to { stroke-dashoffset: -100; } }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-32 bg-navy-900">
+        <div class="absolute inset-0 bg-gradient-gold opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="fade-up">
+            <h2 class="text-gold-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">Our Philosophy</h2>
+            <h3 class="text-4xl md:text-5xl font-serif font-bold text-white mb-10 italic">
+                “Raw materials are not commodities alone—they are the foundation of industries.”
+            </h3>
+            <p class="text-gray-300 text-lg font-light mb-10">
+                We combine Trade Expertise, Scientific Understanding, and Global Intelligence to create future-ready supply chains.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                <a href="#contact" class="btn-premium border border-gold-500 text-gold-500 px-10 py-4 font-bold tracking-widest uppercase text-sm">
+                    Join Our Network
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-[#010205] text-gray-400 pt-20 pb-12 border-t border-gold-500/20 relative">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold-500/50 to-transparent"></div>
+        
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
+                
+                <div class="lg:col-span-5">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-10 h-10 border border-gold-500 flex items-center justify-center transform rotate-45">
+                            <div class="w-4 h-4 bg-white transform -rotate-45"></div>
+                        </div>
+                        <span class="font-serif font-bold text-3xl tracking-[0.2em] uppercase text-white">Raw<span class="text-gold-500">mat</span></span>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-8 font-light text-gray-500 pr-8">
+                        Rawmat is a next-generation procurement and supply chain platform. We don’t just connect supply chains — we understand them, ensuring efficiency, transparency, and strategic advantage.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 border border-white/10 rounded-none flex items-center justify-center hover:bg-gold-500 hover:text-navy-900 hover:border-gold-500 transition duration-300"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 border border-white/10 rounded-none flex items-center justify-center hover:bg-gold-500 hover:text-navy-900 hover:border-gold-500 transition duration-300"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <h4 class="text-white font-serif font-bold mb-8 uppercase tracking-widest text-sm border-b border-white/10 pb-4 inline-block">Platform</h4>
+                    <ul class="space-y-4 text-sm font-light">
+                        <li><a href="#about" class="hover:text-gold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-gold-500"></i> About Us</a></li>
+                        <li><a href="#capabilities" class="hover:text-gold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-gold-500"></i> Capabilities</a></li>
+                        <li><a href="#products" class="hover:text-gold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-gold-500"></i> Commodities Matrix</a></li>
+                        <li><a href="#industries" class="hover:text-gold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-gold-500"></i> Industries</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <h4 class="text-white font-serif font-bold mb-8 uppercase tracking-widest text-sm border-b border-white/10 pb-4 inline-block">Launch Markets</h4>
+                    <ul class="space-y-6 text-sm font-light">
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-dot text-gold-500 mt-1 text-lg"></i>
+                            <div>
+                                <strong class="text-white block mb-1">Mumbai Operations</strong>
+                                🇮🇳 Maharashtra, India
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-dot text-gold-500 mt-1 text-lg"></i>
+                            <div>
+                                <strong class="text-white block mb-1">Dubai Hub</strong>
+                                🇦🇪 United Arab Emirates
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 mt-6">
+                            <i class="fa-solid fa-envelope text-gold-500 text-lg"></i>
+                            <a href="mailto:partner@rawmat.global" class="hover:text-white transition">office@rawmatz.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-600">
+                <p>&copy; 2026 Rawmat Platform. All Rights Reserved.</p>
+                <div class="flex flex-wrap justify-center gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-8 right-8 z-[100] font-sans group">
+        <div class="absolute bottom-24 right-0 w-[350px] lg:w-[400px] bg-white shadow-premium border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 transform translate-y-8 group-hover:translate-y-0 flex flex-col z-[101]">
+            <div class="bg-navy-900 p-6 flex justify-between items-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500 rounded-full blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+                <div class="flex items-center gap-4 relative z-10">
+                    <div class="relative">
+                        <div class="w-12 h-12 rounded-none border border-gold-500 flex items-center justify-center bg-white/5 backdrop-blur-sm">
+                            <i class="fa-solid fa-robot text-gold-500 text-xl"></i>
+                        </div>
+                        <div class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-green-500 border-2 border-navy-900 rounded-full animate-pulse"></div>
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-white block text-lg tracking-wide">Rawmat Intel</span>
+                        <span class="text-gold-500 text-[10px] uppercase tracking-widest font-bold">Secure Connection</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="h-80 bg-surface-50 p-6 flex flex-col gap-5 overflow-y-auto">
+                <div class="text-center text-[10px] text-gray-400 uppercase tracking-widest mb-2 flex items-center justify-center gap-2">
+                    <div class="w-8 h-px bg-gray-200"></div> System Active <div class="w-8 h-px bg-gray-200"></div>
+                </div>
+                
+                <div class="flex gap-3 max-w-[85%]">
+                    <div class="w-6 h-6 rounded-none bg-navy-900 flex-shrink-0 flex items-center justify-center mt-1">
+                        <i class="fa-solid fa-r text-white text-[10px]"></i>
+                    </div>
+                    <div class="bg-white border border-gray-100 text-navy-900 p-4 text-sm shadow-sm leading-relaxed rounded-tr-xl rounded-b-xl">
+                        Welcome to Rawmat. Are you looking to source <strong>Chemicals</strong>, <strong>Fertilizers</strong>, or require <strong>Supply Chain Intelligence</strong>?
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2 pl-9">
+                    <button class="text-left bg-white border border-gold-500/30 text-navy-900 text-xs py-2 px-4 hover:bg-gold-500 hover:text-white transition-colors rounded-r-lg rounded-bl-lg w-max">
+                        Connect with an Advisor
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-4 bg-white border-t border-gray-100">
+                <div class="flex items-center gap-2 border border-gray-200 bg-surface-50 p-1 focus-within:border-gold-500 transition-colors">
+                    <input type="text" placeholder="Type inquiry..." class="w-full bg-transparent border-none px-3 py-2 text-sm focus:outline-none text-navy-900 placeholder-gray-400">
+                    <button class="bg-navy-900 text-gold-500 w-10 h-10 flex items-center justify-center hover:bg-gold-500 hover:text-navy-900 transition-colors flex-shrink-0">
+                        <i class="fa-solid fa-paper-plane text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <button class="w-[72px] h-[72px] bg-navy-900 text-gold-500 shadow-premium flex items-center justify-center text-3xl hover:scale-110 transition-transform duration-500 border-2 border-gold-500/50 relative z-[102] rounded-none">
+            <i class="fa-solid fa-headset"></i>
+            <span class="absolute -top-2 -right-2 flex h-5 w-5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-500 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-5 w-5 bg-gold-500 border-2 border-navy-900"></span>
+            </span>
+        </button>
+    </div>
+
+    <script>
+        AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-premium');
+                navbar.classList.remove('top-8');
+                navbar.classList.add('top-0');
+            } else {
+                navbar.classList.remove('shadow-premium');
+                navbar.classList.add('top-8');
+                navbar.classList.remove('top-0');
+            }
+        });
+        
+        // Initialize AOS animations
+        AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-premium');
+                navbar.classList.remove('top-8');
+                navbar.classList.add('top-0');
+            } else {
+                navbar.classList.remove('shadow-premium');
+                navbar.classList.add('top-8');
+                navbar.classList.remove('top-0');
+            }
+        });
+
+        // Mobile Menu Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileIcon = document.getElementById('mobile-menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('translate-y-0');
+            
+            if (isOpen) {
+                // Close Menu
+                mobileMenu.classList.remove('translate-y-0', 'opacity-100', 'visible');
+                mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'invisible');
+                mobileIcon.classList.remove('fa-xmark');
+                mobileIcon.classList.add('fa-bars-staggered');
+            } else {
+                // Open Menu
+                mobileMenu.classList.remove('-translate-y-full', 'opacity-0', 'invisible');
+                mobileMenu.classList.add('translate-y-0', 'opacity-100', 'visible');
+                mobileIcon.classList.remove('fa-bars-staggered');
+                mobileIcon.classList.add('fa-xmark');
+            }
+        }
+
+        mobileBtn.addEventListener('click', toggleMenu);
+
+        // Auto-close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(mobileMenu.classList.contains('translate-y-0')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
