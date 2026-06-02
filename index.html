@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <link rel="icon" type="image/png" href="final logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rawmat | Next-Generation Procurement & Supply Chain</title>
-    <meta name="description" content="Redefining Raw Material Sourcing Across the Globe. Rawmat connects industries directly to verified global sources.">
+    <title>Rawmat Resources | The Standard of Global Trade</title>
+    <meta name="description" content="Global leaders in Import Export, Raw Materials, Petrochemicals, and Agri Commodities.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -26,28 +27,34 @@
                         serif: ['Cinzel', 'serif'],
                     },
                     colors: {
-                        navy: {
-                            900: '#030712', // Ultra dark luxury
-                            800: '#0B132B',
-                            700: '#1C2541',
+                        rawNavy: {
+                            900: '#0D1B2A', 
+                            800: '#152A40',
+                            700: '#1D3A57',
                         },
-                        gold: {
-                            300: '#FDE08B',
-                            400: '#E8D08D',
-                            500: '#C5A059', // Primary Gold
+                        rawGold: {
+                            300: '#E8D08D',
+                            400: '#D4B25E',
+                            500: '#C19A3B', 
                             600: '#A38047',
                             700: '#826035',
                         },
+                        rawGreen: {
+                            500: '#75B726', 
+                        },
+                        rawBlue: {
+                            500: '#2196F3', 
+                        },
                         surface: {
-                            50: '#FCFCFD',
-                            100: '#F4F4F6',
-                            200: '#E5E5EA',
+                            50: '#F8FAFC',
+                            100: '#F1F5F9',
+                            200: '#E2E8F0',
                         }
                     },
                     boxShadow: {
-                        'gold-glow': '0 0 20px rgba(197, 160, 89, 0.3)',
-                        'gold-glow-lg': '0 0 40px rgba(197, 160, 89, 0.4)',
-                        'premium': '0 20px 40px -10px rgba(3, 7, 18, 0.1)',
+                        'gold-glow': '0 0 20px rgba(193, 154, 59, 0.3)',
+                        'gold-glow-lg': '0 0 40px rgba(193, 154, 59, 0.4)',
+                        'premium': '0 20px 40px -10px rgba(13, 27, 42, 0.1)',
                     }
                 }
             }
@@ -58,54 +65,60 @@
     /* =========================================
        BASE & SCROLLBAR
        ========================================= */
-    body { background-color: #FCFCFD; color: #030712; }
+    body { background-color: #F8FAFC; color: #1e3247; }
     
     @media (min-width: 768px) {
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #030712; }
-        ::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 0px; }
-        ::-webkit-scrollbar-thumb:hover { background: #E8D08D; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0D1B2A; }
+        ::-webkit-scrollbar-thumb { background: #C19A3B; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4B25E; }
     }
-    ::selection { background: #C5A059; color: #030712; }
+    ::selection { background: #C19A3B; color: #0D1B2A; }
 
     /* =========================================
        TYPOGRAPHY GRADIENTS
        ========================================= */
     .text-gradient-gold {
-        background: linear-gradient(135deg, #E8D08D 0%, #C5A059 40%, #A38047 100%);
+        background: linear-gradient(135deg, #D4B25E 0%, #C19A3B 40%, #A38047 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+    }
+    .text-gradient-multi {
+        background: linear-gradient(to right, #2196F3, #75B726, #C19A3B);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     /* =========================================
        GLASSMORPHISM UTILITIES
        ========================================= */
     .glass-nav {
-        background: rgba(252, 252, 253, 0.85);
+        background: rgba(248, 250, 252, 0.85);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
-        border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+        border-bottom: 1px solid rgba(193, 154, 59, 0.15);
     }
     .glass-dark {
-        background: rgba(3, 7, 18, 0.7);
+        background: rgba(13, 27, 42, 0.7);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(197, 160, 89, 0.2);
+        border: 1px solid rgba(193, 154, 59, 0.2);
     }
     .glass-light {
         background: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(197, 160, 89, 0.1);
+        border: 1px solid rgba(193, 154, 59, 0.1);
     }
 
     /* =========================================
        COMPLEX GRADIENTS
        ========================================= */
-    .bg-gradient-gold { background: linear-gradient(135deg, #A38047 0%, #C5A059 50%, #E8D08D 100%); }
-    .hero-overlay { background: linear-gradient(to right, rgba(3, 7, 18, 0.95) 0%, rgba(3, 7, 18, 0.7) 50%, rgba(3, 7, 18, 0.3) 100%); }
-    .card-overlay { background: linear-gradient(to top, rgba(3, 7, 18, 0.95) 0%, rgba(3, 7, 18, 0.4) 50%, transparent 100%); }
+    .bg-gradient-gold { background: linear-gradient(135deg, #A38047 0%, #C19A3B 50%, #D4B25E 100%); }
+    .bg-gradient-navy { background: linear-gradient(180deg, #0D1B2A 0%, #152A40 100%); }
+    .hero-overlay { background: linear-gradient(to right, rgba(13, 27, 42, 0.95) 0%, rgba(13, 27, 42, 0.7) 50%, rgba(13, 27, 42, 0.3) 100%); }
+    .card-overlay { background: linear-gradient(to top, rgba(13, 27, 42, 0.95) 0%, rgba(13, 27, 42, 0.4) 50%, transparent 100%); }
 
     /* =========================================
        ANIMATIONS
@@ -114,8 +127,14 @@
         0% { transform: translateX(0); }
         100% { transform: translateX(-50%); }
     }
-    .animate-marquee { display: flex; width: 200%; animation: marquee 30s linear infinite; }
-    @media (max-width: 768px) { .animate-marquee { animation-duration: 20s; } }
+    .animate-marquee { 
+        display: flex; 
+        width: 200%; 
+        animation: marquee 30s linear infinite; 
+    }
+    @media (max-width: 768px) {
+        .animate-marquee { animation-duration: 20s; }
+    }
     .animate-marquee:hover { animation-play-state: paused; }
 
     @keyframes float {
@@ -131,7 +150,7 @@
     }
     .pulse-circle::before {
         content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%;
-        background-color: #C5A059; border-radius: 50%; z-index: -1;
+        background-color: #C19A3B; border-radius: 50%; z-index: -1;
         animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
     }
 
@@ -148,21 +167,24 @@
     }
     .btn-premium::after {
         content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
-        background-color: #030712; z-index: -2;
+        background-color: #0D1B2A; z-index: -2;
     }
     .btn-premium::before {
         content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 100%;
-        background: linear-gradient(135deg, #A38047 0%, #C5A059 50%, #E8D08D 100%);
+        background: linear-gradient(135deg, #A38047 0%, #C19A3B 50%, #D4B25E 100%);
         transition: all 0.4s ease; z-index: -1;
     }
 
     @media (hover: hover) and (pointer: fine) {
         .group:hover .img-zoom-target { transform: scale(1.1); }
-        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -10px rgba(197, 160, 89, 0.2); }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -10px rgba(193, 154, 59, 0.2); }
         .btn-premium:hover::before { width: 100%; }
-        .btn-premium:hover { color: #030712 !important; border-color: #C5A059; }
+        .btn-premium:hover { color: #0D1B2A !important; border-color: #C19A3B; }
     }
 
+    /* =========================================
+       DETAIL LIST
+       ========================================= */
     @media (max-width: 1024px) {
         .commodity-specs { max-height: 500px; opacity: 1; margin-top: 1rem; }
     }
@@ -170,605 +192,1117 @@
         .commodity-specs { max-height: 0; opacity: 0; transition: all 0.5s ease; overflow: hidden; }
         .group:hover .commodity-specs { max-height: 200px; opacity: 1; margin-top: 1rem; }
     }
-
-    @media (prefers-reduced-motion: reduce) {
-        .animate-marquee, .animate-float, .pulse-circle::before { animation: none !important; }
-        .img-zoom-target, .hover-lift, .commodity-specs, .btn-premium::before { transition: none !important; }
-    }
+    /* ///// */
     /* =========================================
-       NEW HERO STYLES (Dotted BG & Sunset Gradient)
-       ========================================= */
-    .text-gradient-sunset {
-        background: linear-gradient(to right, #2196F3, #75B726, #C19A3B);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
+           PREMIUM MARQUEE HOVER EFFECT
+           ========================================= */
+       .marquee-text {
+            /* Permanent sunset gradient (hover kadhun takla) */
+            background: linear-gradient(to right, #2196F3, #75B726, #C19A3B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            /* Text var halki shadow dili aahe mhanje dark background var uthun disel */
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5)); 
+        } 
     
-    .dotted-bg {
-        background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-        background-size: 24px 24px;
-    }
-</style>
+    </style>
 </head>
-<body class="antialiased font-sans">
+<body class="antialiased font-sans overflow-x-hidden">
 
-  <div class="bg-rawNavy-900 border-b border-rawGold-500/30 text-rawGold-400 text-[10px] md:text-[11px] uppercase tracking-[0.2em] py-2 overflow-hidden relative z-[60]">
+    <div class="bg-rawNavy-900 border-b border-rawGold-500/30 text-rawGold-400 text-[10px] md:text-[11px] uppercase tracking-[0.2em] py-2 overflow-hidden relative z-[60]">
         <div class="animate-marquee whitespace-nowrap flex items-center">
             <div class="flex items-center gap-6 md:gap-8 px-4 md:px-8">
-                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> BRENT CRUDE: $84.50/bbl</span>
-                <span><i class="fa-solid fa-caret-down text-red-500 mr-1"></i> WTI CRUDE: $79.80/bbl</span>
-                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> GOLD: $4,504.43/oz</span>
-                <span><i class="fa-solid fa-caret-up text-rawBlue-500 mr-1"></i> COPPER: $4.50/lb</span>
-                <span><i class="fa-solid fa-caret-down text-red-500 mr-1"></i> WHEAT: $610.25/bu</span>
-                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> LNG (JKM): $10.45/MMBtu</span>
-                <span><i class="fa-solid fa-caret-up text-rawBlue-500 mr-1"></i> POLYMERS: $1,210/mt</span>
+                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> BRENT CRUDE: $92.984/bbl</span>
+                <span><i class="fa-solid fa-caret-down text-red-500 mr-1"></i> CRUDE Oil: $89.629/bbl</span>
+                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> GOLD: $4517.77/oz</span>
+                <span><i class="fa-solid fa-caret-up text-rawBlue-500 mr-1"></i> COPPER: $6.4355/lb</span>
+                <span><i class="fa-solid fa-caret-down text-red-500 mr-1"></i> WHEAT: $613.68/bu</span>
+                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> LNG (JKM): $18.30/MMBtu</span>
+               
             </div>
             <div class="flex items-center gap-6 md:gap-8 px-4 md:px-8">
-                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> BRENT CRUDE: $84.50/bbl</span>
-                <span><i class="fa-solid fa-caret-down text-red-500 mr-1"></i> WTI CRUDE: $79.80/bbl</span>
-                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> GOLD:$4,504.43/oz</span>
-                <span><i class="fa-solid fa-caret-up text-rawBlue-500 mr-1"></i> COPPER: $4.50/lb</span>
-                <span><i class="fa-solid fa-caret-down text-red-500 mr-1"></i> WHEAT: $610.25/bu</span>
-                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> LNG (JKM): $10.45/MMBtu</span>
-                <span><i class="fa-solid fa-caret-up text-rawBlue-500 mr-1"></i> POLYMERS: $1,210/mt</span>
+                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> BRENT CRUDE: $92.984/bbl</span>
+                <span><i class="fa-solid fa-caret-down text-red-500 mr-1"></i> CRUDE Oil: $89.629/bbl</span>
+                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> GOLD:$4517.77/oz</span>
+                <span><i class="fa-solid fa-caret-up text-rawBlue-500 mr-1"></i> COPPER: $6.4355/lb</span>
+                <span><i class="fa-solid fa-caret-down text-red-500 mr-1"></i> WHEAT: $613.68/bu</span>
+                <span><i class="fa-solid fa-caret-up text-rawGreen-500 mr-1"></i> LNG (JKM): $18.30/MMBtu</span>
+               
             </div>
         </div>
     </div>
 
-    <!-- Navbar -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300 top-8" id="navbar">
-        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
-            <div class="flex justify-between items-center h-24">
+        <!-- <nav class="fixed w-full z-50 transition-all duration-300 top-8 bg-[linear-gradient(to_right,#2b004f_0%,#5b2a86_20%,#bfa6d9_45%,#f3eef8_70%,#ffffff_100%)] backdrop-blur-xl shadow-xl border border-white/20" id="navbar"> -->
+        <div class="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="flex justify-between items-center h-20 md:h-24">
                 
-                <!-- Updated Logo Section -->
-                <a href="#" class="flex items-center gap-4 cursor-pointer z-50">
-                    <!-- TUMCHA LOGO ITHE TAKA (src madhe image cha path/naav dya) -->
-                    <img src="final logo.png" alt="Rawmat Logo" class="h-20 md:h-23 w-auto object-contain drop-shadow-lg">
-                    
-                    <!-- Jar tumhala logo sobat text pan hav asel tar khalcha code uncomment kara -->
-                    
-                     <div class="flex flex-col justify-center">
-                        <span class="font-serif font-bold text-3xl tracking-[0.2em] uppercase text-navy-900 leading-none">Raw<span class="text-gold-500">mat</span></span>
-                    </div> 
-                
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden xl:flex space-x-12 items-center font-semibold text-xs tracking-widest uppercase">
-                    <a href="#about" class="text-navy-900 hover:text-gold-500 transition duration-300 py-10">About</a>
-                    <a href="#capabilities" class="text-navy-900 hover:text-gold-500 transition duration-300 py-10">Capabilities</a>
-                    <a href="#products" class="text-navy-900 hover:text-gold-500 transition duration-300 py-10">Products</a>
-                    <a href="#industries" class="text-navy-900 hover:text-gold-500 transition duration-300 py-10">Industries</a>
-                    <a href="#network" class="text-navy-900 hover:text-gold-500 transition duration-300 py-10">Global Network</a>
+                <div class="flex items-center gap-2 sm:gap-4 cursor-pointer group">
+                    <img src="logo-dark-bg.png" alt="Rawmat Logo" class="h-20 md:h-23 w-auto object-contain transition-transform duration-700 group-hover:scale-105">
+                    <div class="flex flex-col justify-center">
+                        <span class="font-serif font-bold text-2xl md:text-3xl tracking-[0.1em] md:tracking-[0.2em] uppercase text-rawNavy-900 leading-none">Rawmat<span class="text-rawGold-500">.</span></span>
+                        <span class="text-[8px] md:text-[9px] font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase text-gray-500 mt-1 block"></span>
+                    </div>
                 </div>
 
-                <!-- Desktop Action Buttons -->
+                <div class="hidden xl:flex space-x-12 items-center font-semibold text-xs tracking-widest uppercase">
+                    <div class="relative group cursor-pointer py-10">
+                        <!-- <span class="text-rawNavy-900 hover:text-rawGold-500 transition duration-300 flex items-center gap-2">Company <i class="fa-solid fa-chevron-down text-[10px]"></i></span> -->
+                        <div class="absolute top-[100%] left-1/2 transform -translate-x-1/2 w-64 bg-white shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pt-4 pb-4">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-gold"></div>
+                            <a href="#about" class="block px-8 py-3 text-gray-600 hover:text-rawGold-500 hover:bg-surface-50 transition">Corporate Overview</a>
+                            <a href="#leadership" class="block px-8 py-3 text-gray-600 hover:text-rawGold-500 hover:bg-surface-50 transition">Board of Directors</a>
+                            <a href="#esg" class="block px-8 py-3 text-gray-600 hover:text-rawGold-500 hover:bg-surface-50 transition">ESG & Sustainability</a>
+                            <a href="#careers" class="block px-8 py-3 text-gray-600 hover:text-rawGold-500 hover:bg-surface-50 transition">Careers</a>
+                        </div>
+                    </div>
+                    
+                    <a href="#expertise" class="text-rawNavy-900 hover:text-rawGold-500 transition duration-300 py-10">Expertise</a>
+                    <a href="#commodities" class="text-rawNavy-900 hover:text-rawGold-500 transition duration-300 py-10">Commodities Index</a>
+                    <a href="#global" class="text-rawNavy-900 hover:text-rawGold-500 transition duration-300 py-10">Industries</a>
+                    <div class="relative inline-block text-left group">
+  <!-- Main Link (Industries) -->
+  <a href="#global" class="text-rawNavy-900 hover:text-rawGold-500 transition duration-300 py-10 inline-flex items-center gap-1">
+    Industries
+    <!-- Dropdown Arrow Icon -->
+    <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </a>
+
+  <!-- Dropdown Menu -->
+  <!-- 'group-hover:block' mule hover kelya var menu open hoto -->
+  <div class="absolute left-0 hidden w-56 mt-0 origin-top-left bg-white border border-gray-200 rounded-md shadow-lg group-hover:block z-50">
+    <div class="py-1" role="menu" aria-orientation="vertical">
+      <a href="#tech" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-rawGold-500 transition" role="menuitem">FOOD & BEVERAGES</a>
+      <a href="#healthcare" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-rawGold-500 transition" role="menuitem">AGRISCIENCE</a>
+      <a href="#finance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-rawGold-500 transition" role="menuitem">TEXTILES & APPAREL</a>
+      <a href="#education" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-rawGold-500 transition" role="menuitem">BIOTECHNOLOGY</a>
+      <a href="#manufacturing" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-rawGold-500 transition" role="menuitem">FMCG</a>
+      <a href="#retail" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-rawGold-500 transition" role="menuitem">INDUSTRIAL GASES</a>
+    </div>
+  </div>
+</div>
+                   <a href="careers.html" class="text-rawNavy-900 hover:text-rawGold-500 transition duration-300 py-10">careers</a>
+                </div>
+
                 <div class="hidden lg:flex items-center gap-6">
-                    <div class="flex items-center gap-2 text-navy-900 font-bold text-xs cursor-pointer hover:text-gold-500 transition">
-                        <i class="fa-solid fa-globe"></i> EN
+                    <div class="flex items-center gap-2 text-rawNavy-900 font-bold text-xs cursor-pointer hover:text-rawGold-500 transition">
+                        <i class="fa-solid fa-globe text-rawBlue-500"></i> EN
                     </div>
                     <div class="w-px h-6 bg-gray-300"></div>
-                    <a href="#contact" class="bg-gold-500 text-navy-900 px-8 py-3.5 font-bold tracking-widest uppercase text-xs hover:bg-navy-900 hover:text-gold-500 transition-all duration-300 shadow-gold-glow cursor-pointer">
+                    <a href="form.html" class="border border-rawNavy-900 text-rawNavy-900 px-8 py-3.5 font-bold tracking-widest uppercase text-xs hover:bg-rawNavy-900 hover:text-white transition-all duration-300 cursor-pointer">
+                        Client Portal
+                    </a>
+                    <a href="supplier form.html" class="bg-rawGold-500 text-rawNavy-900 px-8 py-3.5 font-bold tracking-widest uppercase text-xs hover:bg-rawNavy-900 hover:text-rawGold-500 transition-all duration-300 shadow-gold-glow cursor-pointer">
                         Partner With Us
                     </a>
                 </div>
                 
-                <!-- Mobile Menu Button (Hamburger) -->
-                <button class="xl:hidden text-navy-900 text-2xl focus:outline-none z-50 relative" id="mobile-menu-btn">
-                    <i class="fa-solid fa-bars-staggered transition-transform duration-300" id="mobile-menu-icon"></i>
+                <button id="mobile-menu-btn" class="xl:hidden text-rawNavy-900 text-2xl p-2">
+                    <i class="fa-solid fa-bars-staggered"></i>
                 </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Dropdown (Initially Hidden) -->
-        <div class="xl:hidden absolute top-full left-0 w-full bg-surface-50/95 backdrop-blur-xl border-b border-gold-500/20 shadow-premium transition-all duration-500 ease-in-out transform -translate-y-full opacity-0 invisible -z-10" id="mobile-menu">
-            <div class="flex flex-col px-6 py-10 space-y-6 font-semibold text-xs tracking-widest uppercase text-center">
-                <a href="#about" class="mobile-link text-navy-900 hover:text-gold-500 transition duration-300">About</a>
-                <a href="#capabilities" class="mobile-link text-navy-900 hover:text-gold-500 transition duration-300">Capabilities</a>
-                <a href="#products" class="mobile-link text-navy-900 hover:text-gold-500 transition duration-300">Products</a>
-                <a href="#industries" class="mobile-link text-navy-900 hover:text-gold-500 transition duration-300">Industries</a>
-                <a href="#network" class="mobile-link text-navy-900 hover:text-gold-500 transition duration-300">Global Network</a>
-                <div class="w-12 h-px bg-gold-500/50 mx-auto my-2"></div>
-                <a href="#contact" class="mobile-link bg-gold-500 text-navy-900 px-8 py-4 font-bold tracking-widest uppercase text-xs hover:bg-navy-900 hover:text-gold-500 transition-all duration-300 shadow-gold-glow mx-auto w-max">
-                    Partner With Us
-                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen min-h-[900px] flex items-center justify-center overflow-hidden pt-20 bg-navy-800 dotted-bg">
-        
-        <div class="absolute inset-0 z-0 opacity-60">
-            <img src="Gemini_Generated_Image_adqlu8adqlu8adql.png" alt="Global Trade Hub" class="w-full h-full object-cover mix-blend-overlay animate-[pulse_20s_ease-in-out_infinite_alternate]" />
-            <div class="absolute inset-0 bg-navy-700/80"></div>
+    <div id="mobile-menu" class="fixed inset-0 bg-rawNavy-900/95 backdrop-blur-xl z-[1000] transform translate-x-full transition-transform duration-500 xl:hidden flex flex-col justify-center items-center gap-8">
+        <button id="close-menu" class="absolute top-6 right-6 p-4 text-white text-3xl hover:text-rawGold-500 transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <!-- <a href="#about" class="mobile-link text-2xl sm:text-3xl text-white font-serif uppercase tracking-widest hover:text-rawGold-500 transition-colors">Company</a> -->
+        <a href="#expertise" class="mobile-link text-2xl sm:text-3xl text-white font-serif uppercase tracking-widest hover:text-rawGold-500 transition-colors">Expertise</a>
+        <a href="#commodities" class="mobile-link text-2xl sm:text-3xl text-white font-serif uppercase tracking-widest hover:text-rawGold-500 transition-colors">Commodities</a>
+        <a href="#global" class="mobile-link text-2xl sm:text-3xl text-white font-serif uppercase tracking-widest hover:text-rawGold-500 transition-colors">Global Network</a>
+        <!-- <a href="#compliance" class="mobile-link text-2xl sm:text-3xl text-white font-serif uppercase tracking-widest hover:text-rawGold-500 transition-colors">Compliance</a> -->
+        <a href="#contact" class="mobile-link mt-8 px-10 py-4 bg-rawGold-500 text-rawNavy-900 font-bold tracking-widest uppercase text-sm shadow-gold-glow border border-rawGold-500 hover:bg-transparent hover:text-rawGold-500 transition-all">Client Portal</a>
+    </div>
+
+    <section class="relative min-h-[100svh] lg:min-h-[900px] flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 z-0 bg-rawNavy-900">
+            <img src="Gemini_Generated_Image_adqlu8adqlu8adql.png" alt="Global Trade Hub" class="w-full h-full object-cover opacity-50 scale-105 animate-[pulse_20s_ease-in-out_infinite_alternate]" />
+            <div class="absolute inset-0 hero-overlay"></div>
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTk3LCAxNjAsIDg5LCAwLjE1KSIvPjwvc3ZnPg==')] opacity-30"></div>
         </div>
         
-        <div class="relative z-10 w-full max-w-[100rem] mx-auto px-6 lg:px-12">
-            <div class="max-w-6xl" data-aos="fade-up" data-aos-duration="1200">
+        <div class="relative z-10 w-full max-w-[100rem] mx-auto px-6 lg:px-12 mt-10 md:mt-0">
+            <div class="max-w-5xl" data-aos="fade-up" data-aos-duration="1200">
                 
-                <!-- Matching the Top Strip from the image -->
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-12 h-px bg-gold-500"></div>
-                    <span class="text-gold-500 font-bold tracking-[0.3em] text-[10px] sm:text-xs uppercase">
-                        Est. 2026 • Global Masters
-                    </span>
+                <div class="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+                    <div class="w-8 md:w-6 h-px bg-rawGreen-500"></div>
+                    <span class="text-rawGold-500 font-bold tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs uppercase">Est. 2026 • Global Masters</span>
+                
                 </div>
-                
-                <!-- Typography matching the image structure -->
+                <br><span class="text-rawGold-500 font-bold tracking-[0.2em] md:tracking-[0.3em] text-[40px] md:text-2xl uppercase"><pre> </pre></span>
                 <h1 class="text-5xl md:text-6xl lg:text-8xl font-serif font-bold text-white leading-[1.1] mb-6 md:mb-8 drop-shadow-2xl">
-                    <span class="text-white block">Architecting the</span>
-                    <span class="text-gradient-sunset italic block mt-2 pr-4">Future of Trade</span>
+                    Architecting the <br>
+                    <span class="text-gradient-multi italic pr-4">Future of Trade</span>
+                    
                 </h1>
                 
-                <p class="text-lg md:text-xl text-gray-300 font-light mb-12 max-w-3xl leading-relaxed border-l-2 border-gold-500/50 pl-6">
-                    Rawmat is a next-generation procurement and supply chain platform designed to simplify, optimize, and transform how industries access raw materials—globally and intelligently.
+                <p class="text-base md:text-xl text-gray-300 font-light mb-10 md:mb-12 max-w-3xl leading-relaxed border-l-2 border-rawBlue-500/50 pl-4 md:pl-6">
+                    Rawmat Resources commands the intersection of strategic sourcing, financial engineering, and maritime logistics.we are next-generation procurement and supply chain platform designed to simplify, optimize, and transform how industries access raw materials—globally and intelligently. 
+                
                 </p>
                 
-                <div class="flex flex-col sm:flex-row items-center gap-6">
-                    <a href="#products" class="w-full sm:w-auto bg-gradient-gold text-navy-900 px-12 py-5 font-bold tracking-widest uppercase text-sm shadow-gold-glow-lg hover:scale-105 transition-transform duration-300 text-center">
-                        Explore Categories
+                <div class="flex flex-col sm:flex-row items-center gap-4 md:gap-6">
+                    <a href="#commodities" class="w-full sm:w-auto bg-gradient-gold text-rawNavy-900 px-8 md:px-12 py-4 md:py-5 font-bold tracking-widest uppercase text-xs md:text-sm shadow-gold-glow-lg hover:scale-105 transition-transform duration-300 text-center">
+                        Explore Commodities
                     </a>
-                    <a href="#capabilities" class="w-full sm:w-auto glass-dark text-white border border-gold-500/30 px-12 py-5 font-bold tracking-widest uppercase text-sm hover:bg-gold-500 hover:text-navy-900 transition-all duration-300 text-center">
-                        Discover Our Platform
+                    <a href="#contact" class="w-full sm:w-auto glass-dark text-white border border-rawGold-500/30 px-8 md:px-12 py-4 md:py-5 font-bold tracking-widest uppercase text-xs md:text-sm hover:bg-rawGold-500 hover:text-rawNavy-900 transition-all duration-300 text-center">
+                       Initialize Partnerships
                     </a>
                 </div>
                 
             </div>
         </div>
 
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20">
-            <span class="text-gold-500 text-[10px] uppercase tracking-[0.3em] font-bold mb-3">Scroll to Discover</span>
-            <div class="w-px h-16 bg-white/20 relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-1/2 bg-gold-500 animate-[translateY_2s_ease-in-out_infinite]"></div>
+        <div class="absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20">
+            <span class="text-rawGold-500 text-[8px] md:text-[10px] uppercase tracking-[0.3em] font-bold mb-3 hidden md:block">Scroll to Discover</span>
+            <div class="w-px h-12 md:h-16 bg-white/20 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1/2 bg-rawGold-500 animate-[translateY_2s_ease-in-out_infinite]"></div>
             </div>
         </div>
     </section>
 
-    <section class="bg-navy-900 border-y border-gold-500/20 py-12 relative z-20 -mt-1 shadow-2xl">
+   <section class="bg-[#030712] border-y border-[#C5A059]/20 py-12 relative z-20 -mt-1 shadow-2xl">
+    <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-[#C5A059]/10 text-center">
+            
+            <div data-aos="fade-up" data-aos-delay="0" class="py-4 lg:py-0">
+                <div class="text-2xl font-serif font-bold text-white mb-2">
+                    <i class="fa-solid fa-map-location-dot text-[#C5A059] mr-2"></i> Next Door
+                </div>
+                <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Making global procurement feel local, fast, and accessible.</div>
+            </div>
+            
+            <div data-aos="fade-up" data-aos-delay="100" class="py-4 lg:py-0">
+                <div class="text-2xl font-serif font-bold text-white mb-2">
+                    <i class="fa-solid fa-brain text-[#C5A059] mr-2"></i> Deep Intelligence
+                </div>
+                <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Understanding origin, routes, & market dynamics.</div>
+            </div>
+            
+            <div data-aos="fade-up" data-aos-delay="200" class="py-4 lg:py-0">
+                <div class="text-2xl font-serif font-bold text-white mb-2">
+                    <i class="fa-solid fa-chart-line text-[#C5A059] mr-2"></i> Beyond Sourcing
+                </div>
+                <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Cost optimization & risk mitigation integrated.</div>
+            </div>
+            
+            <div data-aos="fade-up" data-aos-delay="300" class="py-4 lg:py-0">
+                <div class="text-2xl font-serif font-bold text-white mb-2">
+                    <i class="fa-solid fa-handshake-angle text-[#C5A059] mr-2"></i> Partnership
+                </div>
+                <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Not just trade. Trade + Knowledge.</div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+    <!-- <section class="bg-rawNavy-900 border-y border-rawGold-500/20 py-10 md:py-12 relative z-20 -mt-1 shadow-2xl">
         <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-gold-500/10 text-center">
-                <div data-aos="fade-up" data-aos-delay="0" class="py-4 lg:py-0">
-                    <div class="text-2xl font-serif font-bold text-white mb-2"><i class="fa-solid fa-map-location-dot text-gold-500 mr-2"></i> Next Door</div>
-                    <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Making global procurement feel local, fast, and accessible.</div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-8 lg:gap-y-0 lg:divide-x divide-rawGold-500/10 text-center">
+                <div data-aos="fade-up" data-aos-delay="0" class="border-r border-rawGold-500/10 lg:border-none">
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-2">$14.2B+</div>
+                    <div class="text-rawGold-500 text-[10px] md:text-xs font-bold uppercase tracking-widest px-2">Annual Volume</div>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="100" class="py-4 lg:py-0">
-                    <div class="text-2xl font-serif font-bold text-white mb-2"><i class="fa-solid fa-brain text-gold-500 mr-2"></i> Deep Intelligence</div>
-                    <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Understanding origin, routes, & market dynamics.</div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-2">54</div>
+                    <div class="text-rawBlue-500 text-[10px] md:text-xs font-bold uppercase tracking-widest px-2">Countries Reached</div>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="200" class="py-4 lg:py-0">
-                    <div class="text-2xl font-serif font-bold text-white mb-2"><i class="fa-solid fa-chart-line text-gold-500 mr-2"></i> Beyond Sourcing</div>
-                    <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Cost optimization & risk mitigation integrated.</div>
+                <div data-aos="fade-up" data-aos-delay="200" class="border-r border-rawGold-500/10 lg:border-none">
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-2">2M+</div>
+                    <div class="text-rawGreen-500 text-[10px] md:text-xs font-bold uppercase tracking-widest px-2">Metric Tons</div>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="300" class="py-4 lg:py-0">
-                    <div class="text-2xl font-serif font-bold text-white mb-2"><i class="fa-solid fa-handshake-angle text-gold-500 mr-2"></i> Partnership</div>
-                    <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Not just trade. Trade + Knowledge.</div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-2">120+</div>
+                    <div class="text-rawGold-500 text-[10px] md:text-xs font-bold uppercase tracking-widest px-2">Active Charters</div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <section id="about" class="py-32 bg-surface-50 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-surface-100 transform skew-x-12 translate-x-32 z-0"></div>
+  <section id="about" class="py-20 md:py-32 bg-surface-50 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-surface-100 transform skew-x-12 translate-x-32 z-0 hidden lg:block"></div>
         
         <div class="max-w-[100rem] mx-auto px-6 lg:px-12 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 
                 <div class="lg:col-span-5 relative" data-aos="fade-right">
-                    <div class="absolute -top-10 -left-10 w-32 h-32 border-t-2 border-l-2 border-gold-500 z-0"></div>
-                    <div class="absolute -bottom-10 -right-10 w-32 h-32 border-b-2 border-r-2 border-gold-500 z-0"></div>
-                    <img src="image.png" alt="Science & Sourcing" class="relative z-10 w-full h-auto object-cover  duration-700">
-                    <div class="absolute -right-12 top-1/4 glass-light p-6 shadow-xl z-20 animate-float hidden md:block border-l-4 border-l-gold-500">
-                        <i class="fa-solid fa-bullseye text-3xl text-gold-500 mb-2"></i>
-                        <h4 class="font-bold text-navy-900">Deliver Certainty</h4>
-                        <p class="text-xs text-gray-500">Zero Guesswork</p>
+                    <!-- Changed borders from blue/green to premium gold to match the theme -->
+                    <div class="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-20 md:w-32 h-20 md:h-32 border-t-2 border-l-2 border-rawGold-500 z-0"></div>
+                    <div class="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 w-20 md:w-32 h-20 md:h-32 border-b-2 border-r-2 border-rawGold-500 z-0"></div>
+                    
+                    <img src="image.png" alt="Corporate Building" class="relative z-10 w-full h-auto object-cover">
+                    
+                    <div class="absolute -right-4 md:-right-12 top-1/4 glass-light p-4 md:p-6 shadow-xl z-20 animate-float hidden sm:block border-l-4 border-l-rawGold-500">
+                        <i class="fa-solid fa-shield-halved text-2xl md:text-3xl text-rawGold-500 mb-2"></i>
+                        <h4 class="font-bold text-rawNavy-900 text-sm md:text-base">Triple-A Rated</h4>
+                        <p class="text-[10px] md:text-xs text-gray-500">Financial Security</p>
                     </div>
                 </div>
 
-                <div class="lg:col-span-7 lg:pl-16" data-aos="fade-left">
-                    <h2 class="text-gold-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">About Rawmat</h2>
-                    <h3 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-navy-900 mb-8 leading-tight">End the endless search. <br>Deliver certainty.</h3>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-8 font-light">
-                        Rawmat is built on a simple yet powerful idea. We connect industries directly to verified global sources, combining deep market intelligence, logistics expertise, and material science insight to create a seamless procurement experience.
+                <div class="lg:col-span-7 lg:pl-16 mt-8 lg:mt-0" data-aos="fade-left">
+                    <h2 class="text-rawGold-500 font-bold tracking-[0.2em] text-xs md:text-sm uppercase mb-4">Corporate Overview</h2>
+                    <h3 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-rawNavy-900 mb-6 md:mb-8 leading-tight">Redefining the <br>Geometry of Trade</h3>
+                    
+                    <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-6 font-light">
+                        At the core of every product, every innovation, and every civilization lies raw material resources — and we stand as the bridge connecting the world to its essential foundations. Where the world sees commodities, we see the building blocks of tomorrow. Where industries seek supply, we deliver continuity, trust, and global reach.
+                    </p>
+                    <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-10 font-light">
+                        We combine global sourcing strength with logistics mastery — managing procurement, sea & air shipment mapping, and dynamic trade route optimization to ensure timely delivery, cost efficiency, and seamless international supply chain execution worldwide.
                     </p>
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
+                    <!-- Updated 4 Points Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 mb-10">
+                        
+                        <!-- 1. Efficiency -->
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-navy-900 flex items-center justify-center rounded-none flex-shrink-0 text-gold-500">
-                                <i class="fa-solid fa-bolt text-xl"></i>
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-rawNavy-900 flex items-center justify-center rounded-none flex-shrink-0 text-rawGold-500">
+                                <i class="fa-solid fa-bolt text-lg md:text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-navy-900 uppercase tracking-wide text-sm mb-1">Efficiency</h4>
-                                <p class="text-gray-500 text-sm">Streamlined operations reducing overall procurement time.</p>
+                                <h4 class="font-bold text-rawNavy-900 uppercase tracking-wide text-xs md:text-sm mb-1">Efficiency</h4>
+                                <p class="text-gray-500 text-xs md:text-sm">Streamlined operations reducing overall procurement time.</p>
                             </div>
                         </div>
+                        
+                        <!-- 2. Transparency -->
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-navy-900 flex items-center justify-center rounded-none flex-shrink-0 text-gold-500">
-                                <i class="fa-solid fa-eye text-xl"></i>
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-rawNavy-900 flex items-center justify-center rounded-none flex-shrink-0 text-rawGold-500">
+                                <i class="fa-solid fa-eye text-lg md:text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-navy-900 uppercase tracking-wide text-sm mb-1">Transparency</h4>
-                                <p class="text-gray-500 text-sm">Clear visibility into origin, pricing, and logistics.</p>
+                                <h4 class="font-bold text-rawNavy-900 uppercase tracking-wide text-xs md:text-sm mb-1">Transparency</h4>
+                                <p class="text-gray-500 text-xs md:text-sm">Clear visibility into origin, pricing, and logistics.</p>
                             </div>
                         </div>
+                        
+                        <!-- 3. Reliability -->
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-navy-900 flex items-center justify-center rounded-none flex-shrink-0 text-gold-500">
-                                <i class="fa-solid fa-shield-halved text-xl"></i>
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-rawNavy-900 flex items-center justify-center rounded-none flex-shrink-0 text-rawGold-500">
+                                <i class="fa-solid fa-check-double text-lg md:text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-navy-900 uppercase tracking-wide text-sm mb-1">Reliability</h4>
-                                <p class="text-gray-500 text-sm">Consistent quality and guaranteed delivery timelines.</p>
+                                <h4 class="font-bold text-rawNavy-900 uppercase tracking-wide text-xs md:text-sm mb-1">Reliability</h4>
+                                <p class="text-gray-500 text-xs md:text-sm">Consistent quality and guaranteed delivery timelines.</p>
                             </div>
                         </div>
+                        
+                        <!-- 4. Strategic Advantage -->
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-navy-900 flex items-center justify-center rounded-none flex-shrink-0 text-gold-500">
-                                <i class="fa-solid fa-chess-knight text-xl"></i>
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-rawNavy-900 flex items-center justify-center rounded-none flex-shrink-0 text-rawGold-500">
+                                <i class="fa-solid fa-chess-knight text-lg md:text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-navy-900 uppercase tracking-wide text-sm mb-1">Strategic Advantage</h4>
-                                <p class="text-gray-500 text-sm">Gaining an edge through cost and supply optimization.</p>
+                                <h4 class="font-bold text-rawNavy-900 uppercase tracking-wide text-xs md:text-sm mb-1">Strategic Advantage</h4>
+                                <p class="text-gray-500 text-xs md:text-sm">Gaining an edge through cost and supply optimization.</p>
                             </div>
                         </div>
+
                     </div>
+
+                    <a href="#leadership" class="inline-flex items-center gap-3 text-rawNavy-900 font-bold uppercase tracking-widest text-xs md:text-sm hover:text-rawGold-500 transition border-b border-rawNavy-900 hover:border-rawGold-500 pb-1">
+                        Meet Our Leadership <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="capabilities" class="py-32 bg-white">
+    <section id="expertise" class="py-20 md:py-32 bg-white">
         <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
-            <div class="text-center mb-24" data-aos="fade-up">
-                <h2 class="text-gold-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">Our Core Capabilities</h2>
-                <h3 class="text-4xl md:text-5xl font-serif font-bold text-navy-900">End-to-End Strategic Solutions</h3>
-                <div class="w-24 h-1 bg-gold-500 mx-auto mt-8"></div>
+            <div class="text-center mb-16 md:mb-24" data-aos="fade-up">
+                <h2 class="text-rawBlue-500 font-bold tracking-[0.2em] text-xs md:text-sm uppercase mb-4">Core Services</h2>
+                <h3 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-rawNavy-900">End-to-End Global Sourcing Solutions</h3>
+                <div class="w-16 md:w-24 h-1 bg-rawGold-500 mx-auto mt-6 md:mt-8"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="p-10 border border-gray-100 hover:border-gold-500 bg-surface-50 hover-lift group" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-20 h-20 bg-white border border-gray-200 flex items-center justify-center mb-8 group-hover:bg-navy-900 group-hover:border-navy-900 transition-colors duration-300">
-                        <i class="fa-solid fa-boxes-stacked text-3xl text-gold-500"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="p-8 md:p-10 border border-gray-100 hover:border-rawBlue-500 bg-surface-50 hover-lift group transition-colors" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-white border border-gray-200 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-rawNavy-900 transition-colors duration-300">
+                        <i class="fa-solid fa-earth-americas text-2xl md:text-3xl text-rawBlue-500"></i>
                     </div>
-                    <h4 class="text-xl font-serif font-bold text-navy-900 mb-4">Raw Material Sourcing</h4>
-                    <ul class="text-gray-500 font-light leading-relaxed mb-6 text-sm list-disc pl-4 space-y-2">
-                        <li>Global supplier identification</li>
-                        <li>Direct manufacturer access</li>
-                        <li>Multi-origin sourcing</li>
-                    </ul>
+                    <h3 class="text-lg md:text-xl font-serif font-bold text-rawNavy-900 mb-3 md:mb-4">Raw Material Sourcing</h3>
+                    <p class="text-gray-500 font-light leading-relaxed mb-6 text-sm">Delivering reliable access to global raw material networks with quality and consistency.</p>
+                    <a href="#" class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-rawBlue-500 group-hover:text-rawNavy-900 transition-colors">Learn More &rarr;</a>
                 </div>
-                
-                <div class="p-10 border border-gray-100 hover:border-gold-500 bg-surface-50 hover-lift group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-20 h-20 bg-white border border-gray-200 flex items-center justify-center mb-8 group-hover:bg-navy-900 group-hover:border-navy-900 transition-colors duration-300">
-                        <i class="fa-solid fa-ship text-3xl text-gold-500"></i>
+                <div class="p-8 md:p-10 border border-gray-100 hover:border-rawGreen-500 bg-surface-50 hover-lift group transition-colors" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-white border border-gray-200 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-rawNavy-900 transition-colors duration-300">
+                        <i class="fa-solid fa-ship text-2xl md:text-3xl text-rawGreen-500"></i>
                     </div>
-                    <h4 class="text-xl font-serif font-bold text-navy-900 mb-4">Supply Chain & Logistics</h4>
-                    <ul class="text-gray-500 font-light leading-relaxed mb-6 text-sm list-disc pl-4 space-y-2">
-                        <li>End-to-end logistics solutions</li>
-                        <li>Freight optimization</li>
-                        <li>Warehousing & distribution</li>
-                    </ul>
+                    <h3 class="text-lg md:text-xl font-serif font-bold text-rawNavy-900 mb-3 md:mb-4">Supply Chain & Logistics</h3>
+                    <p class="text-gray-500 font-light leading-relaxed mb-6 text-sm">Ensuring seamless movement of materials through efficient logistics and supply coordination.</p>
+                    <a href="#" class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-rawGreen-500 group-hover:text-rawNavy-900 transition-colors">Learn More &rarr;</a>
                 </div>
-                
-                <div class="p-10 border border-gray-100 hover:border-gold-500 bg-surface-50 hover-lift group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-20 h-20 bg-white border border-gray-200 flex items-center justify-center mb-8 group-hover:bg-navy-900 group-hover:border-navy-900 transition-colors duration-300">
-                        <i class="fa-solid fa-chart-pie text-3xl text-gold-500"></i>
+                <div class="p-8 md:p-10 border border-gray-100 hover:border-rawGold-500 bg-surface-50 hover-lift group transition-colors" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-white border border-gray-200 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-rawNavy-900 transition-colors duration-300">
+                        <i class="fa-solid fa-file-invoice-dollar text-2xl md:text-3xl text-rawGold-500"></i>
                     </div>
-                    <h4 class="text-xl font-serif font-bold text-navy-900 mb-4">Market Intelligence</h4>
-                    <ul class="text-gray-500 font-light leading-relaxed mb-6 text-sm list-disc pl-4 space-y-2">
-                        <li>Price trends & forecasting</li>
-                        <li>Supply-demand analytics</li>
-                        <li>Risk assessment</li>
-                    </ul>
+                    <h3 class="text-lg md:text-xl font-serif font-bold text-rawNavy-900 mb-3 md:mb-4">Procurement Management</h3>
+                    <p class="text-gray-500 font-light leading-relaxed mb-6 text-sm">Managing strategic procurement processes to optimize cost, quality, and continuity.</p>
+                    <a href="#" class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-rawGold-500 group-hover:text-rawNavy-900 transition-colors">Learn More &rarr;</a>
                 </div>
-                
-                <div class="p-10 border border-gray-100 hover:border-gold-500 bg-surface-50 hover-lift group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-20 h-20 bg-white border border-gray-200 flex items-center justify-center mb-8 group-hover:bg-navy-900 group-hover:border-navy-900 transition-colors duration-300">
-                        <i class="fa-solid fa-flask text-3xl text-gold-500"></i>
+                <div class="p-8 md:p-10 border border-gray-100 hover:border-rawNavy-900 bg-surface-50 hover-lift group transition-colors" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-white border border-gray-200 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-rawNavy-900 transition-colors duration-300">
+                        <i class="fa-solid fa-chart-line text-2xl md:text-3xl text-rawNavy-900 group-hover:text-white transition-colors"></i>
                     </div>
-                    <h4 class="text-xl font-serif font-bold text-navy-900 mb-4">Material Science Integration</h4>
-                    <ul class="text-gray-500 font-light leading-relaxed mb-6 text-sm list-disc pl-4 space-y-2">
-                        <li>Product suitability analysis</li>
-                        <li>Application-based recommendations</li>
-                        <li>Innovation-driven sourcing</li>
-                    </ul>
+                    <h3 class="text-lg md:text-xl font-serif font-bold text-rawNavy-900 mb-3 md:mb-4">Global Trade Execution</h3>
+                    <p class="text-gray-500 font-light leading-relaxed mb-6 text-sm">Enabling efficient cross-border trade with streamlined execution and delivery.</p>
+                    <a href="#" class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-rawNavy-900 group-hover:text-rawGold-500 transition-colors">Learn More &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="products" class="py-32 bg-navy-900 relative">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
+  
+
+<div class="bg-[#0B192C] w-full py-16 text-center mb-14 md:mb-20" data-aos="fade-up">
+    <h3 class="text-3xl md:text-4xl lg:text-4xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#2196F3] via-[#75B726] to-[#C19A3B] leading-tight max-w-5xl mx-auto px-4">
+        Redefining Global Raw Material Sourcing for the Industry 4.0 Era
+    </h3>
+</div>
+
+  <section id="commodities" class="py-20 md:py-32 bg-gray-50 relative">
+        <!-- Subtle background texture (Inverted for light background) -->
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.03] invert"></div>
         
         <div class="max-w-[100rem] mx-auto px-6 lg:px-12 relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20" data-aos="fade-up">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-6" data-aos="fade-up">
                 <div>
-                    <h2 class="text-gold-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">Product Categories</h2>
-                    <h3 class="text-4xl md:text-6xl font-serif font-bold text-white">Core Material Sourcing</h3>
+                    <h2 class="text-rawGold-500 font-bold tracking-[0.2em] text-xs md:text-sm uppercase mb-2 md:mb-4">Core Sourcing</h2>
+                    <!-- Text color changed to Navy for light background -->
+                    <h3 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-rawNavy-900">Our Commodity Index</h3>
                 </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                
-                <div class="group relative h-[450px] img-zoom-wrapper bg-black" data-aos="fade-up" data-aos-delay="0">
-                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" alt="Chemicals" class="absolute inset-0 w-full h-full object-cover opacity-50 img-zoom-target mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-70 transition-all duration-700">
-                    <div class="absolute inset-0 card-overlay"></div>
-                    <div class="absolute inset-0 border border-gold-500/0 group-hover:border-gold-500/50 transition-colors duration-500 z-10"></div>
-                    <div class="absolute bottom-0 left-0 p-8 w-full z-20 flex flex-col justify-end h-full">
-                        <span class="text-gold-500 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">Category 01</span>
-                        <h4 class="text-3xl font-serif text-white mb-2">Chemicals</h4>
-                        <p class="text-gray-300 text-sm font-light mb-4">Specialty & industrial chemicals for multiple applications.</p>
-                        <button class="text-gold-500 text-xs font-bold tracking-widest uppercase hover:text-white transition text-left mt-auto">Explore Catalog <i class="fa-solid fa-arrow-right ml-1"></i></button>
-                    </div>
-                </div>
-
-                <div class="group relative h-[450px] img-zoom-wrapper bg-black" data-aos="fade-up" data-aos-delay="100">
-                    <img src="fertilizer.avif" alt="Fertilizers" class="absolute inset-0 w-full h-full object-cover opacity-50 img-zoom-target mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-70 transition-all duration-700">
-                    <div class="absolute inset-0 card-overlay"></div>
-                    <div class="absolute inset-0 border border-gold-500/0 group-hover:border-gold-500/50 transition-colors duration-500 z-10"></div>
-                    <div class="absolute bottom-0 left-0 p-8 w-full z-20 flex flex-col justify-end h-full">
-                        <span class="text-gold-500 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">Category 02</span>
-                        <h4 class="text-3xl font-serif text-white mb-2">Fertilizers</h4>
-                        <p class="text-gray-300 text-sm font-light mb-4">Global sourcing of advanced agri-nutrient solutions.</p>
-                        <button class="text-gold-500 text-xs font-bold tracking-widest uppercase hover:text-white transition text-left mt-auto">Explore Catalog <i class="fa-solid fa-arrow-right ml-1"></i></button>
-                    </div>
-                </div>
-
-                <div class="group relative h-[450px] img-zoom-wrapper bg-black" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://plus.unsplash.com/premium_photo-1733306459429-072d73ef6e93?w=800&auto=format&fit=crop&q=60" alt="Petrochemicals" class="absolute inset-0 w-full h-full object-cover opacity-50 img-zoom-target mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-70 transition-all duration-700">
-                    <div class="absolute inset-0 card-overlay"></div>
-                    <div class="absolute inset-0 border border-gold-500/0 group-hover:border-gold-500/50 transition-colors duration-500 z-10"></div>
-                    <div class="absolute bottom-0 left-0 p-8 w-full z-20 flex flex-col justify-end h-full">
-                        <span class="text-gold-500 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">Category 03</span>
-                        <h4 class="text-3xl font-serif text-white mb-2">Petrochemicals</h4>
-                        <p class="text-gray-300 text-sm font-light mb-4">Bulk and specialty petrochemical supply chains.</p>
-                        <button class="text-gold-500 text-xs font-bold tracking-widest uppercase hover:text-white transition text-left mt-auto">Explore Catalog <i class="fa-solid fa-arrow-right ml-1"></i></button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="industries" class="py-24 bg-surface-50 border-b border-gray-200">
-        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-gold-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">Sectors</h2>
-                <h3 class="text-4xl font-serif font-bold text-navy-900 mb-4">Industries We Serve</h3>
-                <p class="text-gray-500 max-w-2xl mx-auto text-sm">Empowering a diverse range of global markets with precision sourcing.</p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
-                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group" data-aos="zoom-in" data-aos-delay="0">
-                    <i class="fa-solid fa-utensils text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
-                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">Food & Bev</span>
-                </div>
-                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group" data-aos="zoom-in" data-aos-delay="50">
-                    <i class="fa-solid fa-shirt text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
-                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">Textiles & Apparel</span>
-                </div>
-                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fa-solid fa-cart-shopping text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
-                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">FMCG</span>
-                </div>
-                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group" data-aos="zoom-in" data-aos-delay="150">
-                    <i class="fa-solid fa-pills text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
-                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">Pharmaceuticals</span>
-                </div>
-                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fa-solid fa-tractor text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
-                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">Agriscience</span>
-                </div>
-                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group" data-aos="zoom-in" data-aos-delay="250">
-                    <i class="fa-solid fa-wind text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
-                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">Industrial Gases</span>
-                </div>
-                <div class="bg-white p-6 border border-gray-100 hover:border-gold-500 hover:shadow-gold-glow transition-all text-center group col-span-2 md:col-span-4 lg:col-span-1" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fa-solid fa-dna text-3xl text-gray-300 group-hover:text-gold-500 transition-colors mb-4 block"></i>
-                    <span class="font-bold text-navy-900 text-xs uppercase tracking-widest">Biotechnology</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="network" class="py-32 bg-surface-100 relative overflow-hidden">
-        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20" data-aos="fade-up">
-                <div>
-                    <h2 class="text-gold-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">Global Network</h2>
-                    <h3 class="text-4xl md:text-5xl font-serif font-bold text-navy-900 mb-6">The Science of Supply Chain</h3>
-                    <p class="text-gray-600 font-light mb-6">
-                        At Rawmat, procurement is not transactional—it’s analytical. Our network spans manufacturers, processors, traders, and logistics providers across Asia, Middle East, Europe, and the Americas.
-                    </p>
-                    <p class="text-gray-600 font-light mb-8">
-                        We apply data-driven sourcing models, cost-to-serve optimization, route efficiency mapping, and inventory intelligence.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <span class="bg-navy-900 text-gold-500 px-4 py-2 text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check text-green-500 mr-2"></i> Reduced Cost</span>
-                        <span class="bg-navy-900 text-gold-500 px-4 py-2 text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check text-green-500 mr-2"></i> Faster Turnaround</span>
-                        <span class="bg-navy-900 text-gold-500 px-4 py-2 text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check text-green-500 mr-2"></i> Higher Reliability</span>
-                    </div>
-                </div>
-                
-                <div class="relative w-full h-[500px] bg-navy-900 rounded-sm shadow-2xl overflow-hidden border border-gold-500/20" data-aos="zoom-in">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map" class="absolute inset-0 w-full h-full object-cover opacity-20 filter invert sepia hue-rotate-[180deg] saturate-[2]">
-                    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-
-                    <div class="absolute top-[45%] left-[68%] group">
-                        <div class="w-4 h-4 bg-gold-500 rounded-full relative pulse-circle shadow-gold-glow cursor-pointer"></div>
-                        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white px-3 py-1 rounded-sm text-xs font-bold text-navy-900 shadow-xl z-30 whitespace-nowrap">
-                            🇮🇳 Mumbai (Launch)
-                        </div>
-                    </div>
-                    
-                    <div class="absolute top-[40%] left-[62%] group">
-                        <div class="w-4 h-4 bg-gold-500 rounded-full relative pulse-circle shadow-gold-glow cursor-pointer"></div>
-                        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white px-3 py-1 rounded-sm text-xs font-bold text-navy-900 shadow-xl z-30 whitespace-nowrap">
-                            🇦🇪 Dubai (Launch)
-                        </div>
-                    </div>
-                    
-                    <div class="absolute top-[25%] left-[48%]"><div class="w-2 h-2 bg-white/50 rounded-full"></div></div>
-                    <div class="absolute top-[35%] left-[20%]"><div class="w-2 h-2 bg-white/50 rounded-full"></div></div>
-                    <div class="absolute top-[55%] left-[78%]"><div class="w-2 h-2 bg-white/50 rounded-full"></div></div>
-
-                    <svg class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: 10;">
-                        <path d="M 68% 45% Q 65% 35% 62% 40%" fill="transparent" stroke="rgba(197, 160, 89, 0.6)" stroke-width="2" stroke-dasharray="4,4" class="animate-[dash_20s_linear_infinite]" />
-                    </svg>
-                    <style>
-                        @keyframes dash { to { stroke-dashoffset: -100; } }
-                    </style>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="relative py-32 bg-navy-900">
-        <div class="absolute inset-0 bg-gradient-gold opacity-10"></div>
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="fade-up">
-            <h2 class="text-gold-500 font-bold tracking-[0.2em] text-sm uppercase mb-4">Our Philosophy</h2>
-            <h3 class="text-4xl md:text-5xl font-serif font-bold text-white mb-10 italic">
-                “Raw materials are not commodities alone—they are the foundation of industries.”
-            </h3>
-            <p class="text-gray-300 text-lg font-light mb-10">
-                We combine Trade Expertise, Scientific Understanding, and Global Intelligence to create future-ready supply chains.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-                <a href="#contact" class="btn-premium border border-gold-500 text-gold-500 px-10 py-4 font-bold tracking-widest uppercase text-sm">
-                    Join Our Network
+                <a href="#" class="w-full md:w-auto text-center border border-rawGold-500 text-rawGold-500 px-6 py-3 md:px-8 md:py-3 font-bold tracking-widest uppercase text-xs hover:bg-rawGold-500 hover:text-white transition-colors">
+                    Download Catalog (PDF)
                 </a>
             </div>
-        </div>
-    </section>
 
-    <footer id="contact" class="bg-[#010205] text-gray-400 pt-20 pb-12 border-t border-gold-500/20 relative">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold-500/50 to-transparent"></div>
-        
-        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
+            <!-- White Box Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 
-                <div class="lg:col-span-5">
-                    <div class="flex items-center gap-3 mb-8">
-                        <div class="w-10 h-10 border border-gold-500 flex items-center justify-center transform rotate-45">
-                            <div class="w-4 h-4 bg-white transform -rotate-45"></div>
-                        </div>
-                        <span class="font-serif font-bold text-3xl tracking-[0.2em] uppercase text-white">Raw<span class="text-gold-500">mat</span></span>
+                <!-- White Box 1 -->
+                <div class="group relative bg-white p-4 md:p-6 flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100" data-aos="fade-up" data-aos-delay="0">
+                    <!-- Product Image with Hover Zoom Effect -->
+                    <div class="relative w-full h-64 md:h-72 overflow-hidden bg-gray-100 mb-6">
+                        <img src="polymer.avif" alt="Chemicals" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 transform grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                        <!-- Subtle overlay that fades out on hover -->
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
                     </div>
-                    <p class="text-sm leading-relaxed mb-8 font-light text-gray-500 pr-8">
-                        Rawmat is a next-generation procurement and supply chain platform. We don’t just connect supply chains — we understand them, ensuring efficiency, transparency, and strategic advantage.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 border border-white/10 rounded-none flex items-center justify-center hover:bg-gold-500 hover:text-navy-900 hover:border-gold-500 transition duration-300"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" class="w-10 h-10 border border-white/10 rounded-none flex items-center justify-center hover:bg-gold-500 hover:text-navy-900 hover:border-gold-500 transition duration-300"><i class="fa-brands fa-x-twitter"></i></a>
+                    
+                    <!-- Text Content -->
+                    <div class="relative flex flex-col flex-grow">
+                        <span class="text-rawBlue-500 text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase mb-1 md:mb-2">Category 01</span>
+                        <h4 class="text-2xl md:text-3xl font-serif text-rawNavy-900 font-bold mb-4">Chemicals</h4>
+                        
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <button class="text-rawGold-500 text-[10px] md:text-xs font-bold tracking-widest uppercase hover:text-rawNavy-900 transition flex items-center group-hover:translate-x-2 duration-300">
+                                Request Specs <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="lg:col-span-3">
-                    <h4 class="text-white font-serif font-bold mb-8 uppercase tracking-widest text-sm border-b border-white/10 pb-4 inline-block">Platform</h4>
-                    <ul class="space-y-4 text-sm font-light">
-                        <li><a href="#about" class="hover:text-gold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-gold-500"></i> About Us</a></li>
-                        <li><a href="#capabilities" class="hover:text-gold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-gold-500"></i> Capabilities</a></li>
-                        <li><a href="#products" class="hover:text-gold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-gold-500"></i> Commodities Matrix</a></li>
-                        <li><a href="#industries" class="hover:text-gold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-gold-500"></i> Industries</a></li>
+                <!-- White Box 2 -->
+                <div class="group relative bg-white p-4 md:p-6 flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+                    <!-- Product Image with Hover Zoom Effect -->
+                    <div class="relative w-full h-64 md:h-72 overflow-hidden bg-gray-100 mb-6">
+                        <img src="petro.avif" alt="Petrochemicals" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 transform grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    
+                    <!-- Text Content -->
+                    <div class="relative flex flex-col flex-grow">
+                        <span class="text-rawBlue-500 text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase mb-1 md:mb-2">Category 02</span>
+                        <h4 class="text-2xl md:text-3xl font-serif text-rawNavy-900 font-bold mb-4">Petrochemicals</h4>
+                        
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <button class="text-rawGold-500 text-[10px] md:text-xs font-bold tracking-widest uppercase hover:text-rawNavy-900 transition flex items-center group-hover:translate-x-2 duration-300">
+                                Request Specs <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- White Box 3 -->
+                <div class="group relative bg-white p-4 md:p-6 flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Product Image with Hover Zoom Effect -->
+                    <div class="relative w-full h-64 md:h-72 overflow-hidden bg-gray-100 mb-6">
+                        <img src="fertilizer.avif" alt="Fertilizers" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 transform grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    
+                    <!-- Text Content -->
+                    <div class="relative flex flex-col flex-grow">
+                        <span class="text-rawBlue-500 text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase mb-1 md:mb-2">Category 03</span>
+                        <h4 class="text-2xl md:text-3xl font-serif text-rawNavy-900 font-bold mb-4">Fertilizers</h4>
+                        
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <button class="text-rawGold-500 text-[10px] md:text-xs font-bold tracking-widest uppercase hover:text-rawNavy-900 transition flex items-center group-hover:translate-x-2 duration-300">
+                                Request Specs <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- White Box 4 -->
+                <div class="group relative bg-white p-4 md:p-6 flex flex-col shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100" data-aos="fade-up" data-aos-delay="150">
+                    <!-- Product Image with Hover Zoom Effect -->
+                    <div class="relative w-full h-64 md:h-72 overflow-hidden bg-gray-100 mb-6">
+                       <!-- <img src="polymer.avif" alt="Chemicals" class="w-full h-full object-cover transform grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"> -->
+                        <img src="metal.avif" alt="Metals" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 transform grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    
+                    <!-- Text Content -->
+                    <div class="relative flex flex-col flex-grow">
+                        <span class="text-rawBlue-500 text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase mb-1 md:mb-2">Category 04</span>
+                        <h4 class="text-2xl md:text-3xl font-serif text-rawNavy-900 font-bold mb-4">Metals</h4>
+                        
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <button class="text-rawGold-500 text-[10px] md:text-xs font-bold tracking-widest uppercase hover:text-rawNavy-900 transition flex items-center group-hover:translate-x-2 duration-300 transform grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                                Request Specs <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Button -->
+            <div class="text-center mt-12 md:mt-20" data-aos="fade-up">
+                <button class="border border-rawGold-500 text-rawGold-500 px-8 py-4 md:px-12 md:py-4 font-bold tracking-widest uppercase text-xs md:text-sm w-full md:w-auto hover:bg-rawGold-500 hover:text-white transition-colors duration-300 shadow-lg">
+                    View Full Commodity Index
+                </button>
+            </div>
+        </div>
+    </section>
+
+   <section class="py-24 relative overflow-hidden bg-navy-900 border-y border-gold-500/20">
+        <!-- Header Text -->
+        <div class="max-w-7xl mx-auto px-6 mb-16 text-center" data-aos="fade-up">
+            <h2 class="text-gold-500 font-bold tracking-[0.2em] text-xs md:text-sm uppercase mb-4">Global Network</h2>
+            <h3 class="font-serif text-4xl md:text-5xl font-bold text-black mb-4">Industries We Serve</h3>
+            <p class="text-gray-400 text-sm font-light">Powering operations in 40+ countries across key sectors.</p>
+        </div>
+        
+        <!-- Animated Marquee Strip -->
+        <div class="w-full glass-dark py-4 relative z-10 border-y border-gold-500/10 overflow-hidden flex">
+           <div class="animate-marquee whitespace-nowrap flex items-center">
+                
+                <!-- Group 1 -->
+                <div class="flex items-center px-4">
+                    <span class="text-5xl font-serif font-bold marquee-text">FOOD & BEVERAGES</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-utensils"></i></span>
+                    
+                    <span class="text-5xl font-serif font-bold marquee-text">TEXTILES & APPAREL</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-shirt"></i></span>
+                    
+                    <span class="text-5xl font-serif font-bold marquee-text">FMCG</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-cart-shopping"></i></span>
+                    
+                    <span class="text-5xl font-serif font-bold marquee-text">PHARMACEUTICALS</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-pills"></i></span>
+
+                    <span class="text-5xl font-serif font-bold marquee-text">AGRISCIENCE</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-leaf"></i></span>
+
+                    <span class="text-5xl font-serif font-bold marquee-text">INDUSTRIAL GASES</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-wind"></i></span>
+
+                    <span class="text-5xl font-serif font-bold marquee-text">BIOTECHNOLOGY</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-dna"></i></span>
+                </div>
+
+                <!-- Group 2 (Duplicate for seamless loop) -->
+                <div class="flex items-center px-4">
+                    <span class="text-5xl font-serif font-bold marquee-text">FOOD & BEVERAGES</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-utensils"></i></span>
+                    
+                    <span class="text-5xl font-serif font-bold marquee-text">TEXTILES & APPAREL</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-shirt"></i></span>
+                    
+                    <span class="text-5xl font-serif font-bold marquee-text">FMCG</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-cart-shopping"></i></span>
+                    
+                    <span class="text-5xl font-serif font-bold marquee-text">PHARMACEUTICALS</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-pills"></i></span>
+
+                    <span class="text-5xl font-serif font-bold marquee-text">AGRISCIENCE</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-leaf"></i></span>
+
+                    <span class="text-5xl font-serif font-bold marquee-text">INDUSTRIAL GASES</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-wind"></i></span>
+
+                    <span class="text-5xl font-serif font-bold marquee-text">BIOTECHNOLOGY</span>
+                    <span class="text-5xl text-gold-500 px-10 drop-shadow-[0_0_8px_rgba(197,160,89,0.4)]"><i class="fa-solid fa-dna"></i></span>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    
+
+<section id="network" class="py-32 bg-[#030712] relative overflow-hidden border-y border-[#C5A059]/10">
+    <div class="max-w-[100rem] mx-auto px-6 lg:px-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20" data-aos="fade-up">
+            
+            <!-- Text Content -->
+            <div>
+                <h2 class="text-[#C5A059] font-bold tracking-[0.2em] text-sm uppercase mb-4">Global Network</h2>
+                <h3 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">The Science of Supply Chain</h3>
+                <p class="text-gray-400 font-light mb-6">
+                    At Rawmat, procurement is not transactional—it’s analytical. Our network spans manufacturers, processors, traders, and logistics providers across Asia, Middle East, Europe, and the Americas.
+                </p>
+                <p class="text-gray-400 font-light mb-8">
+                    We apply data-driven sourcing models, cost-to-serve optimization, route efficiency mapping, and inventory intelligence.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <span class="bg-[#0B132B] border border-[#C5A059]/20 text-[#C5A059] px-4 py-2 text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check text-green-500 mr-2"></i> Reduced Cost</span>
+                    <span class="bg-[#0B132B] border border-[#C5A059]/20 text-[#C5A059] px-4 py-2 text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check text-green-500 mr-2"></i> Faster Turnaround</span>
+                    <span class="bg-[#0B132B] border border-[#C5A059]/20 text-[#C5A059] px-4 py-2 text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check text-green-500 mr-2"></i> Higher Reliability</span>
+                </div>
+            </div>
+            
+            <!-- Map Container -->
+            <div class="relative w-full h-[500px] bg-[#0a0f18] rounded-sm shadow-2xl overflow-hidden border border-[#C5A059]/20" data-aos="zoom-in">
+                
+                <!-- Map Image (Darkened) -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map" class="absolute inset-0 w-full h-full object-cover opacity-30 filter invert grayscale">
+                
+                <!-- Faint Grid Layout -->
+                <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+                <!-- 1. DUBAI Marker (Proper Location: UAE/Arabian Peninsula) -->
+                <div class="absolute top-[40%] left-[64%] group z-20">
+                    <div class="absolute -inset-3 bg-[#C5A059] rounded-full opacity-30 blur-sm group-hover:opacity-60 transition-opacity"></div>
+                    <div class="w-3.5 h-3.5 bg-[#C5A059] rounded-full relative cursor-pointer shadow-[0_0_10px_#C5A059]"></div>
+                    
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white px-3 py-1.5 rounded-sm text-xs font-bold text-black shadow-xl z-30 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-gray-500 text-[9px] mr-1">AE</span> Dubai (Hub)
+                    </div>
+                </div>
+
+                <!-- 2. MUMBAI Marker (Proper Location: West Coast of India) -->
+                <div class="absolute top-[44%] left-[70%] group z-20">
+                    <div class="absolute -inset-3 bg-[#C5A059] rounded-full opacity-30 blur-sm group-hover:opacity-60 transition-opacity"></div>
+                    <div class="w-3.5 h-3.5 bg-[#C5A059] rounded-full relative cursor-pointer shadow-[0_0_10px_#C5A059]"></div>
+                    
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white px-3 py-1.5 rounded-sm text-xs font-bold text-black shadow-xl z-30 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-gray-500 text-[9px] mr-1">IN</span> Mumbai (Launch)
+                    </div>
+                </div>
+
+                <!-- 3. HONG KONG Marker (Proper Location: Southeast Coast of China) -->
+                <div class="absolute top-[40%] left-[82%] group z-20">
+                    <div class="absolute -inset-3 bg-[#C5A059] rounded-full opacity-30 blur-sm group-hover:opacity-60 transition-opacity"></div>
+                    <div class="w-3.5 h-3.5 bg-[#C5A059] rounded-full relative cursor-pointer shadow-[0_0_10px_#C5A059]"></div>
+                    
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white px-3 py-1.5 rounded-sm text-xs font-bold text-black shadow-xl z-30 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-gray-500 text-[9px] mr-1">HK</span> Hong Kong
+                    </div>
+                </div>
+                
+                <!-- Other Decorative Grey Dots -->
+                <div class="absolute top-[28%] left-[48%]"><div class="w-2 h-2 bg-gray-500 rounded-full"></div></div> <!-- Europe -->
+                <div class="absolute top-[38%] left-[22%]"><div class="w-2 h-2 bg-gray-500 rounded-full"></div></div> <!-- US East Coast -->
+                <div class="absolute top-[70%] left-[30%]"><div class="w-2 h-2 bg-gray-500 rounded-full"></div></div> <!-- South America -->
+
+                <!-- Connection Lines (Connecting Dubai -> Mumbai -> Hong Kong) -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: 10;">
+                    <!-- Dubai to Mumbai -->
+                    <path d="M 63.5% 45% Q 66% 40% 69% 48%" fill="transparent" stroke="rgba(197, 160, 89, 0.6)" stroke-width="1.5" stroke-dasharray="4,4" class="animate-[dash_20s_linear_infinite]" />
+                    <!-- Mumbai to Hong Kong -->
+                    <path d="M 69% 48% Q 76% 40% 83% 46%" fill="transparent" stroke="rgba(197, 160, 89, 0.6)" stroke-width="1.5" stroke-dasharray="4,4" class="animate-[dash_20s_linear_infinite]" />
+                </svg>
+                <style>
+                    @keyframes dash { to { stroke-dashoffset: -100; } }
+                </style>
+            </div>
+            
+        </div>
+    </div>
+</section>
+    <!-- <section id="leadership" class="py-20 md:py-32 bg-white relative">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="lg:col-span-6 xl:col-span-5" data-aos="fade-right">
+                    <h2 class="text-rawGold-500 font-bold tracking-[0.2em] text-xs md:text-sm uppercase mb-4">Governance</h2>
+                    <h3 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-rawNavy-900 mb-6 md:mb-8">Guided by Vision, Grounded by Experience</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6 md:mb-8 font-light text-sm md:text-base">
+                        The Rawmat Board of Directors comprises veterans from global finance, maritime law, and international commodity markets. Their collective expertise ensures our operations are not only profitable but ethically sound and resilient to macroeconomic shocks.
+                    </p>
+                    <div class="border-l-4 border-rawGreen-500 pl-4 md:pl-6 py-2 mb-8 bg-surface-50">
+                        <p class="text-rawNavy-900 font-serif font-bold text-lg md:text-xl italic mb-2">"We measure our success not just by volume, but by the trust we cultivate across borders."</p>
+                        <span class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-500">— Jonathan Sterling, Chairman</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 xl:col-span-7" data-aos="fade-left">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-sm sm:max-w-none mx-auto">
+                        <div class="group relative overflow-hidden bg-rawNavy-900 aspect-[3/4]">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Chairman" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-500 opacity-80 group-hover:opacity-100 group-hover:scale-105">
+                            <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-rawNavy-900 to-transparent">
+                                <h4 class="text-white font-serif font-bold text-xl">Jonathan Sterling</h4>
+                                <p class="text-rawGold-500 text-xs font-bold uppercase tracking-widest">Chairman & CEO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="esg" class="py-20 md:py-32 bg-rawNavy-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-full md:w-1/2 h-full bg-[url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1500&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+        <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-rawNavy-900 via-rawNavy-900/90 to-transparent"></div>
+        
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12 relative z-10">
+            <div class="max-w-3xl" data-aos="fade-up">
+                <h2 class="text-rawGreen-500 font-bold tracking-[0.2em] text-xs md:text-sm uppercase mb-4">About Rawmat</h2>
+                <h3 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6 md:mb-8">Who We Are</h3>
+                <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-8 md:mb-10 font-light">
+                    We are the substance behind every atom, every molecule, every element of creation—from chlorophyll in nature to the minerals that build industries.
+                    At the core of every product, every innovation, and every civilization lies raw material resources—and we stand as the bridge connecting the world to its essential foundations.
+                    From mines to markets, from earth to industry, we power global supply chains with precision, reliability, and intelligence
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 glass-dark p-6 border-l-4 border-l-rawGreen-500">
+                        <div class="w-12 h-12 rounded-full border border-rawGreen-500 flex items-center justify-center text-rawGreen-500 text-xl flex-shrink-0"><i class="fa-solid fa-leaf"></i></div>
+                        <div>
+                            <h4 class="font-bold text-base md:text-lg">We Are</h4>
+                            <p class="text-xs md:text-sm text-gray-400 mt-1">Creating long-term value while maintaining environmental responsibility and social impact..</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <section id="vision" class="py-20 md:py-24 bg-white border-b border-gray-200">
+    <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+        
+        <div class="text-center mb-14 md:mb-20" data-aos="fade-up">
+            <span class="text-xl md:text-2xl font-extrabold tracking-[0.35em] uppercase text-[#5b2a86]">
+                Our Vision
+            </span>
+
+            <h3 class="text-3xl md:text-5xl font-serif font-bold text-[#050a10] mt-4 leading-tight">
+                Building a Sustainable <br class="hidden md:block">
+                Future Through Innovation
+            </h3>
+
+            <p class="text-gray-500 max-w-3xl mx-auto text-sm md:text-base mt-6 leading-relaxed">
+                Our vision is to create a globally trusted ecosystem that connects innovation, 
+                sustainability, and responsible growth. We aim to empower industries with 
+                modern solutions while preserving environmental balance and creating long-term value.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="bg-gradient-to-br from-[#f7f3fc] to-white p-8 rounded-3xl shadow-lg border border-purple-100 hover:-translate-y-2 transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
+                <div class="w-16 h-16 rounded-2xl bg-[#5b2a86]/10 flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-earth-americas text-3xl text-[#5b2a86]"></i>
+                </div>
+
+                <h4 class="text-xl font-bold text-[#050a10] mb-4">
+                    Global intelligence
+                </h4>
+
+                <p class="text-gray-500 leading-relaxed text-sm">
+                    Expanding our presence worldwide with ethical business practices and sustainable partnerships.
+                </p>
+            </div>
+
+            <div class="bg-gradient-to-br from-[#eef5ff] to-white p-8 rounded-3xl shadow-lg border border-blue-100 hover:-translate-y-2 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-lightbulb text-3xl text-blue-500"></i>
+                </div>
+
+                <h4 class="text-xl font-bold text-[#050a10] mb-4">
+                    Innovation Driven
+                </h4>
+
+                <p class="text-gray-500 leading-relaxed text-sm">
+                    Leveraging technology and creativity to deliver smart and future-ready solutions.
+                </p>
+            </div>
+
+            <div class="bg-gradient-to-br from-[#fff7ec] to-white p-8 rounded-3xl shadow-lg border border-yellow-100 hover:-translate-y-2 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 rounded-2xl bg-yellow-100 flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-seedling text-3xl text-yellow-500"></i>
+                </div>
+
+                <h4 class="text-xl font-bold text-[#050a10] mb-4">
+                    Sustainable Growth
+                </h4>
+
+                <p class="text-gray-500 leading-relaxed text-sm">
+                    Creating long-term value while maintaining environmental responsibility and social impact.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section> 
+
+    <!-- <section id="compliance" class="py-20 md:py-24 bg-surface-50 border-b border-gray-200">
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <h3 class="text-2xl md:text-3xl font-serif font-bold text-rawNavy-900 mb-4">Global Accreditations & Compliance</h3>
+                <p class="text-gray-500 max-w-2xl mx-auto text-xs md:text-sm px-4">Operating strictly within the legal frameworks of the WTO, ICC, and local jurisdictional mandates.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+                <div class="bg-white p-4 md:p-6 border border-gray-100 hover:border-rawBlue-500 transition-all text-center group" data-aos="zoom-in" data-aos-delay="0">
+                    <i class="fa-solid fa-award text-3xl md:text-4xl text-gray-300 group-hover:text-rawBlue-500 transition-colors mb-3 md:mb-4 block"></i>
+                    <span class="font-bold text-rawNavy-900 text-[10px] md:text-xs uppercase tracking-widest">ISO 9001:2015</span>
+                </div>
+                <div class="bg-white p-4 md:p-6 border border-gray-100 hover:border-rawGold-500 transition-all text-center group" data-aos="zoom-in" data-aos-delay="50">
+                    <i class="fa-solid fa-scale-balanced text-3xl md:text-4xl text-gray-300 group-hover:text-rawGold-500 transition-colors mb-3 md:mb-4 block"></i>
+                    <span class="font-bold text-rawNavy-900 text-[10px] md:text-xs uppercase tracking-widest">AEO Certified</span>
+                </div>
+                <div class="bg-white p-4 md:p-6 border border-gray-100 hover:border-rawGreen-500 transition-all text-center group" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fa-solid fa-shield-cat text-3xl md:text-4xl text-gray-300 group-hover:text-rawGreen-500 transition-colors mb-3 md:mb-4 block"></i>
+                    <span class="font-bold text-rawNavy-900 text-[10px] md:text-xs uppercase tracking-widest">KYC / AML</span>
+                </div>
+                <div class="bg-white p-4 md:p-6 border border-gray-100 hover:border-rawBlue-500 transition-all text-center group" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fa-solid fa-file-contract text-3xl md:text-4xl text-gray-300 group-hover:text-rawBlue-500 transition-colors mb-3 md:mb-4 block"></i>
+                    <span class="font-bold text-rawNavy-900 text-[10px] md:text-xs uppercase tracking-widest">ICC Incoterms</span>
+                </div>
+                <div class="bg-white p-4 md:p-6 border border-gray-100 hover:border-rawGold-500 transition-all text-center group" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fa-solid fa-building-columns text-3xl md:text-4xl text-gray-300 group-hover:text-rawGold-500 transition-colors mb-3 md:mb-4 block"></i>
+                    <span class="font-bold text-rawNavy-900 text-[10px] md:text-xs uppercase tracking-widest">UCP 600 Bank</span>
+                </div>
+                <div class="bg-white p-4 md:p-6 border border-gray-100 hover:border-rawGreen-500 transition-all text-center group" data-aos="zoom-in" data-aos-delay="250">
+                    <i class="fa-solid fa-globe text-3xl md:text-4xl text-gray-300 group-hover:text-rawGreen-500 transition-colors mb-3 md:mb-4 block"></i>
+                    <span class="font-bold text-rawNavy-900 text-[10px] md:text-xs uppercase tracking-widest">WTO Registered</span>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Minimalist Our Philosophy Section -->
+<!-- Minimalist Our Philosophy Section -->
+<section id="philosophy" class="py-20 bg-[#111111] relative overflow-hidden border-t border-b border-white/5">
+    <!-- बॅकग्राउंडवर प्रिमियम लूकसाठी हलका लायटिंग इफेक्ट -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[1px] bg-gradient-to-r from-transparent via-gold-500/20 to-transparent"></div>
+    
+    <div class="max-w-[100rem] mx-auto px-6 lg:px-12 relative z-10 text-center">
+        <div class="max-w-4xl mx-auto" data-aos="fade-up">
+            
+            <!-- लहान टॅगलाईन -->
+            <span class="text-[#c5a059] font-bold tracking-[0.3em] text-xs uppercase block mb-5">Our Philosophy</span>
+            
+            <!-- तुमची मुख्य एका लाईनची फिलॉसॉफी (अक्षरे पांढरी आहेत) -->
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-serif italic text-white leading-relaxed tracking-wide">
+                “Raw materials are not commodities alone—they are the foundation of industries.” <span class="text-gold-400 not-italic font-bold"></span> 
+            </h3>
+            .
+             <span class="text-white font-bold tracking-[0.3em] text-xs uppercase block mb-5">We combine Trade Expertise, Scientific Understanding, and Global Intelligence to create future-ready supply chains.</span>
+        </div>
+    </div>
+    
+</section>
+<div>
+    .
+</div>
+
+    <!-- <section class="relative py-20 md:py-32 bg-rawNavy-900">
+        <div class="absolute inset-0 bg-gradient-gold opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="fade-up">
+           
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 md:mb-6">Elevate Your Supply Chain</h2>
+            <p class="text-gray-300 text-sm md:text-lg font-light mb-8 md:mb-10 px-4">Join exclusive Fortune 500 partners who rely on Rawmat for market-making volume and impenetrable logistics.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12 md:mb-16">
+                <button class="btn-premium border border-rawGold-500 text-rawGold-500 px-8 py-4 font-bold tracking-widest uppercase text-xs md:text-sm w-full sm:w-auto">
+                   Initialize a Partnership.
+                </button> -->
+                <!-- <a href="form.html" class="btn-premium border border-rawGold-500 text-rawGold-500 px-8 py-4 font-bold tracking-widest uppercase text-xs md:text-sm w-full sm:w-auto inline-block text-center">
+    Initialize a Partnership.
+</a>
+                <a href="form.html" class="bg-white text-rawNavy-900 px-8 py-4 font-bold tracking-widest uppercase text-xs md:text-sm hover:bg-gray-100 transition w-full sm:w-auto inline-block text-center">
+    Contact Us
+</a>
+            </div>
+
+
+       
+            <div class="glass-dark p-6 md:p-8 border border-rawGold-500/30 mx-4 md:mx-0">
+                <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-xs md:text-sm">Rawmat Intelligence Report</h4>
+                <p class="text-gray-400 text-xs md:text-sm mb-6">Subscribe to our weekly brief on commodity pricing and tariff shifts.</p>
+                <form class="flex flex-col sm:flex-row gap-3 sm:gap-0 max-w-2xl mx-auto">
+                    <input type="email" placeholder="Enter corporate email" class="w-full bg-white/5 border border-white/20 text-white px-4 md:px-6 py-3 md:py-4 focus:outline-none focus:border-rawGold-500 transition-colors text-sm">
+                    <button type="submit" class="bg-rawGold-500 text-rawNavy-900 px-6 md:px-8 py-3 md:py-4 font-bold uppercase tracking-widest hover:bg-white transition-colors text-sm w-full sm:w-auto">RAQ</button>
+                </form>
+            </div>
+        </div>
+    </section>  -->
+    
+ 
+    <section class="relative py-20 md:py-32 bg-rawNavy-900">
+    <div class="absolute inset-0 bg-gradient-gold opacity-10"></div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10" data-aos="fade-up">
+        
+        <!-- Grid Container: डेस्कटॉपवर २ कॉलम्स आणि मोबाईलवर १ कॉलम -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- डावा भाग (Left Column): मजकूर -->
+            <div class="lg:col-span-5 text-center lg:text-left">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 md:mb-6">
+                    Elevate Your Supply Chain
+                </h2>
+                <p class="text-gray-300 text-sm md:text-lg font-light mb-0">
+                    Join exclusive Fortune 500 partners who rely on Rawmat for market-making volume and impenetrable logistics.
+                </p>
+                <a href="form.html" class="btn-premium border border-rawGold-500 text-rawGold-500 px-8 py-4 font-bold tracking-widest uppercase text-xs md:text-sm w-full sm:w-auto inline-block text-center">
+    Initialize a Partnership.
+</a>
+            </div>
+
+
+            <div class="lg:col-span-7 w-full max-w-2xl lg:ml-auto">
+                <div class="glass-dark p-6 md:p-8 border border-rawGold-500/30 mx-4 md:mx-0 text-left">
+                    <h3 class="text-white font-serif font-bold text-xl md:text-2xl mb-6 tracking-wide">
+                        Request A Quote
+                    </h3>
+                    
+                    <form action="#" method="POST" class="space-y-5">
+                        
+                        <!-- Name Fields Row -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="flex flex-col gap-2">
+                                <label for="name" class="text-gray-400 text-xs uppercase tracking-widest font-bold">First Name</label>
+                                <input type="text" id="name" name="name" placeholder="John" required 
+                                    class="w-full bg-white/5 border border-white/20 text-white px-4 py-3 focus:outline-none focus:border-rawGold-500 transition-colors text-sm">
+                            </div>
+                            
+                            <div class="flex flex-col gap-2">
+                                <label for="lastname" class="text-gray-400 text-xs uppercase tracking-widest font-bold">Last Name</label>
+                                <input type="text" id="lastname" name="lastname" placeholder="Doe" required 
+                                    class="w-full bg-white/5 border border-white/20 text-white px-4 py-3 focus:outline-none focus:border-rawGold-500 transition-colors text-sm">
+                            </div>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="flex flex-col gap-2">
+                            <label for="email" class="text-gray-400 text-xs uppercase tracking-widest font-bold">Corporate Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@company.com" required 
+                                class="w-full bg-white/5 border border-white/20 text-white px-4 py-3 focus:outline-none focus:border-rawGold-500 transition-colors text-sm">
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="flex flex-col gap-2">
+                            <label for="message" class="text-gray-400 text-xs uppercase tracking-widest font-bold">How can we help you?</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your requirements..." required 
+                                class="w-full bg-white/5 border border-white/20 text-white px-4 py-3 focus:outline-none focus:border-rawGold-500 transition-colors text-sm resize-none"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-2">
+                            <button type="submit" 
+                                class="w-full bg-rawGold-500 text-rawNavy-900 py-4 font-bold uppercase tracking-widest hover:bg-white hover:text-rawNavy-900 transition-colors duration-300 text-sm">
+                                Submit Request
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+   
+        <div class="glass-dark p-6 md:p-8 border border-rawGold-500/30 mx-4 md:mx-0 mt-16 text-center">
+            <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-xs md:text-sm">Rawmat Intelligence Report</h4>
+            <p class="text-gray-400 text-xs md:text-sm mb-6">Subscribe to our weekly brief on commodity pricing and tariff shifts.</p>
+            <form class="flex flex-col sm:flex-row gap-3 sm:gap-0 max-w-2xl mx-auto">
+                <input type="email" placeholder="Enter corporate email" class="w-full bg-white/5 border border-white/20 text-white px-4 md:px-6 py-3 md:py-4 focus:outline-none focus:border-rawGold-500 transition-colors text-sm">
+                <button type="submit" class="bg-rawGold-500 text-rawNavy-900 px-6 md:px-8 py-3 md:py-4 font-bold uppercase tracking-widest hover:bg-white transition-colors text-sm w-full sm:w-auto">RAQ</button>
+            </form>
+        </div>
+        
+    </div>
+</section>
+
+    <footer id="contact" class="bg-[#050A10] text-gray-400 pt-20 md:pt-32 pb-8 md:pb-12 border-t border-rawGold-500/20 relative">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-rawGold-500/50 to-transparent"></div>
+        
+        <div class="max-w-[100rem] mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-16 mb-16 md:mb-20">
+                
+                <div class="lg:col-span-4">
+                    <div class="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+                        <img src="final logo.png" alt="Rawmat Logo" class="h-10 md:h-12 w-auto object-contain">
+                        <div>
+                            <span class="font-serif font-bold text-2xl md:text-3xl tracking-[0.2em] uppercase text-white leading-none block">Raw<span class="text-rawGold-500">mat</span></span>
+                            <span class="text-[8px] md:text-[9px] font-bold tracking-[0.3em] uppercase text-gray-500 mt-1 block">Resources Inc</span>
+                        </div>
+                    </div>
+                    <p class="text-xs md:text-sm leading-relaxed mb-6 md:mb-8 font-light text-gray-500">
+                         A MIRAJ INTERNATIONAL – MIRAJ MERCHANT <br>Group Initiative
+                    </p>
+                   
+                    <div class="flex gap-4">
+    <!-- Instagram -->
+    <a href="#" target="_blank" rel="noopener noreferrer" class="w-8 h-8 md:w-10 md:h-10 border border-white/10 rounded-none flex items-center justify-center hover:bg-rawGold-500 hover:text-rawNavy-900 hover:border-rawGold-500 transition duration-300">
+        <i class="fa-brands fa-instagram text-sm"></i>
+    </a>
+    
+    <!-- LinkedIn -->
+    <a href="#" target="_blank" rel="noopener noreferrer" class="w-8 h-8 md:w-10 md:h-10 border border-white/10 rounded-none flex items-center justify-center hover:bg-rawGold-500 hover:text-rawNavy-900 hover:border-rawGold-500 transition duration-300">
+        <i class="fa-brands fa-linkedin-in text-sm"></i>
+    </a>
+    
+   
+    
+    <!-- Facebook -->
+    <a href="#" target="_blank" rel="noopener noreferrer" class="w-8 h-8 md:w-10 md:h-10 border border-white/10 rounded-none flex items-center justify-center hover:bg-rawGold-500 hover:text-rawNavy-900 hover:border-rawGold-500 transition duration-300">
+        <i class="fa-brands fa-facebook-f text-sm"></i>
+    </a>
+   <a href="#" target="_blank" rel="noopener noreferrer" class="w-8 h-8 md:w-10 md:h-10 border border-white/10 rounded-none flex items-center justify-center hover:bg-rawGold-500 hover:text-rawNavy-900 hover:border-rawGold-500 transition duration-300">
+    <i class="fa-brands fa-twitter text-sm"></i>
+</a>
+</div>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h4 class="text-white font-serif font-bold mb-6 md:mb-8 uppercase tracking-widest text-xs md:text-sm border-b border-white/10 pb-4 inline-block">Divisions</h4>
+                    <ul class="space-y-3 md:space-y-4 text-xs md:text-sm font-light">
+                        <li><a href="#" class="hover:text-rawGold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-rawGold-500"></i> Energy & Oil</a></li>
+                        <li><a href="#" class="hover:text-rawGold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-rawGold-500"></i> Petrochemicals</a></li>
+                        <li><a href="#" class="hover:text-rawGold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-rawGold-500"></i> Base Metals</a></li>
+                   <li><a href="#" class="hover:text-rawGold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-rawGold-500"></i> Textiles & Apparel </a></li>
+                     <li><a href="#" class="hover:text-rawGold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-rawGold-500"></i>Agriscience</a></li>
+                </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h4 class="text-white font-serif font-bold mb-6 md:mb-8 uppercase tracking-widest text-xs md:text-sm border-b border-white/10 pb-4 inline-block">Corporate</h4>
+                    <ul class="space-y-3 md:space-y-4 text-xs md:text-sm font-light">
+                        <li><a href="#" class="hover:text-rawGold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-rawGold-500"></i> Investor Relations</a></li>
+                        <li><a href="#" class="hover:text-rawGold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-rawGold-500"></i> compliance</a></li>
+                        <li><a href="careers.html" class="hover:text-rawGold-500 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[8px] text-rawGold-500"></i> Careers</a></li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-4">
-                    <h4 class="text-white font-serif font-bold mb-8 uppercase tracking-widest text-sm border-b border-white/10 pb-4 inline-block">Launch Markets</h4>
-                    <ul class="space-y-6 text-sm font-light">
-                        <li class="flex items-start gap-4">
-                            <i class="fa-solid fa-location-dot text-gold-500 mt-1 text-lg"></i>
+                    <h4 class="text-white font-serif font-bold mb-6 md:mb-8 uppercase tracking-widest text-xs md:text-sm border-b border-white/10 pb-4 inline-block">Global Headquarters</h4>
+                    <ul class="space-y-4 md:space-y-6 text-xs md:text-sm font-light">
+                        <li class="flex items-start gap-3 md:gap-4">
+                            <i class="fa-solid fa-location-dot text-rawGold-500 mt-1 text-base md:text-lg"></i>
                             <div>
-                                <strong class="text-white block mb-1">Mumbai Operations</strong>
-                                🇮🇳 Maharashtra, India
+                                <strong class="text-white block mb-1">🇮🇳  Mumbai</strong>
+                                <strong class="text-white block mb-1">🇦🇪  Dubai</strong>
+                                <strong class="text-white block mb-1">🇭🇰  Hong Kong</strong>
                             </div>
                         </li>
-                        <li class="flex items-start gap-4">
-                            <i class="fa-solid fa-location-dot text-gold-500 mt-1 text-lg"></i>
-                            <div>
-                                <strong class="text-white block mb-1">Dubai Hub</strong>
-                                🇦🇪 United Arab Emirates
-                            </div>
+                        <li class="flex items-center gap-3 md:gap-4">
+                            <i class="fa-solid fa-phone text-rawGold-500 text-base md:text-lg"></i>
+                            <span class="text-white font-medium"><pre>+91 9769976536</pre></span>
+                        <span class="text-white font-medium"><pre>| +971 56 799 5920 </pre></span>
                         </li>
-                        <li class="flex items-center gap-4 mt-6">
-                            <i class="fa-solid fa-envelope text-gold-500 text-lg"></i>
-                            <a href="mailto:partner@rawmat.global" class="hover:text-white transition">office@rawmatz.com</a>
+                        <li class="flex items-center gap-3 md:gap-4">
+                            <i class="fa-solid fa-envelope text-rawGold-500 text-base md:text-lg"></i>
+                            <a href="mailto:office@rawmatz.com" class="hover:text-white transition break-all">office@rawmatz.com</a>
+
                         </li>
+                        <li class="flex items-center gap-3 md:gap-4">
+                            <i class="fa-solid fa-envelope text-rawGold-500 text-base md:text-lg flex items-center gap-3 md:gap-4"></i>
+                            <a href="mailto:trade@rawmatz.com" class="hover:text-white transition break-all ">trade@rawmatz.com </a>
+                            
+                        </li
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-gray-600">
-                <p>&copy; 2026 Rawmat Platform. All Rights Reserved.</p>
-                <div class="flex flex-wrap justify-center gap-6 mt-4 md:mt-0">
+            <div class="border-t border-white/10 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center text-[8px] md:text-[10px] uppercase tracking-widest text-gray-600 text-center md:text-left">
+                <p>&copy; 2026 Rawmat Resources Inc. All Rights Reserved.</p>
+                <div class="flex flex-wrap justify-center gap-4 md:gap-6 mt-4 md:mt-0">
                     <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition">Terms of Trade</a>
+                    <a href="#" class="hover:text-white transition">KYC/AML Policy</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <div class="fixed bottom-8 right-8 z-[100] font-sans group">
-        <div class="absolute bottom-24 right-0 w-[350px] lg:w-[400px] bg-white shadow-premium border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 transform translate-y-8 group-hover:translate-y-0 flex flex-col z-[101]">
-            <div class="bg-navy-900 p-6 flex justify-between items-center relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500 rounded-full blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
-                <div class="flex items-center gap-4 relative z-10">
+    <div class="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[100] font-sans group">
+        <div class="absolute bottom-20 md:bottom-24 right-0 w-[calc(100vw-2rem)] sm:w-[350px] lg:w-[400px] bg-white shadow-premium border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 transform translate-y-8 group-hover:translate-y-0 flex flex-col z-[101]">
+            <div class="bg-rawNavy-900 p-4 md:p-6 flex justify-between items-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-rawGold-500 rounded-full blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+                <div class="flex items-center gap-3 md:gap-4 relative z-10">
                     <div class="relative">
-                        <div class="w-12 h-12 rounded-none border border-gold-500 flex items-center justify-center bg-white/5 backdrop-blur-sm">
-                            <i class="fa-solid fa-robot text-gold-500 text-xl"></i>
+                        <div class="w-10 h-10 md:w-12 md:h-12 rounded-none border border-rawGold-500 flex items-center justify-center bg-white/5 backdrop-blur-sm">
+                            <i class="fa-solid fa-robot text-rawGold-500 text-lg md:text-xl"></i>
                         </div>
-                        <div class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-green-500 border-2 border-navy-900 rounded-full animate-pulse"></div>
+                        <div class="absolute -bottom-1 -right-1 w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-rawGreen-500 border-2 border-rawNavy-900 rounded-full animate-pulse"></div>
                     </div>
                     <div>
-                        <span class="font-serif font-bold text-white block text-lg tracking-wide">Rawmat Intel</span>
-                        <span class="text-gold-500 text-[10px] uppercase tracking-widest font-bold">Secure Connection</span>
+                        <span class="font-serif font-bold text-white block text-base md:text-lg tracking-wide">Rawmat Intel</span>
+                        <span class="text-rawGold-500 text-[8px] md:text-[10px] uppercase tracking-widest font-bold">Secure Connection</span>
                     </div>
                 </div>
             </div>
             
-            <div class="h-80 bg-surface-50 p-6 flex flex-col gap-5 overflow-y-auto">
-                <div class="text-center text-[10px] text-gray-400 uppercase tracking-widest mb-2 flex items-center justify-center gap-2">
+            <div class="h-64 md:h-80 bg-surface-50 p-4 md:p-6 flex flex-col gap-4 overflow-y-auto custom-scrollbar">
+                <div class="text-center text-[8px] md:text-[10px] text-gray-400 uppercase tracking-widest mb-2 flex items-center justify-center gap-2">
                     <div class="w-8 h-px bg-gray-200"></div> System Active <div class="w-8 h-px bg-gray-200"></div>
                 </div>
                 
-                <div class="flex gap-3 max-w-[85%]">
-                    <div class="w-6 h-6 rounded-none bg-navy-900 flex-shrink-0 flex items-center justify-center mt-1">
-                        <i class="fa-solid fa-r text-white text-[10px]"></i>
+                <div class="flex gap-2 md:gap-3 max-w-[90%] md:max-w-[85%]">
+                    <div class="w-5 h-5 md:w-6 md:h-6 rounded-none bg-rawNavy-900 flex-shrink-0 flex items-center justify-center mt-1">
+                        <i class="fa-solid fa-r text-white text-[8px] md:text-[10px]"></i>
                     </div>
-                    <div class="bg-white border border-gray-100 text-navy-900 p-4 text-sm shadow-sm leading-relaxed rounded-tr-xl rounded-b-xl">
-                        Welcome to Rawmat. Are you looking to source <strong>Chemicals</strong>, <strong>Fertilizers</strong>, or require <strong>Supply Chain Intelligence</strong>?
+                    <div class="bg-white border border-gray-100 text-rawNavy-900 p-3 md:p-4 text-xs md:text-sm shadow-sm leading-relaxed rounded-tr-xl rounded-b-xl">
+                        Welcome to Rawmat Corporate Services. Are you inquiring about <strong>Commodity Procurement</strong>, <strong>Trade Finance</strong>, or <strong>Vessel Chartering</strong>?
                     </div>
                 </div>
 
-                <div class="flex flex-col gap-2 pl-9">
-                    <button class="text-left bg-white border border-gold-500/30 text-navy-900 text-xs py-2 px-4 hover:bg-gold-500 hover:text-white transition-colors rounded-r-lg rounded-bl-lg w-max">
-                        Connect with an Advisor
+                <div class="flex flex-col gap-2 pl-7 md:pl-9">
+                    <button class="text-left bg-white border border-rawGold-500/30 text-rawNavy-900 text-[10px] md:text-xs py-2 px-3 md:px-4 hover:bg-rawGold-500 hover:text-white transition-colors rounded-r-lg rounded-bl-lg w-max">
+                        Request Quote (CIF/FOB)
+                    </button>
+                    <button class="text-left bg-white border border-rawGold-500/30 text-rawNavy-900 text-[10px] md:text-xs py-2 px-3 md:px-4 hover:bg-rawGold-500 hover:text-white transition-colors rounded-r-lg rounded-bl-lg w-max">
+                        Speak to a Broker
                     </button>
                 </div>
             </div>
             
-            <div class="p-4 bg-white border-t border-gray-100">
-                <div class="flex items-center gap-2 border border-gray-200 bg-surface-50 p-1 focus-within:border-gold-500 transition-colors">
-                    <input type="text" placeholder="Type inquiry..." class="w-full bg-transparent border-none px-3 py-2 text-sm focus:outline-none text-navy-900 placeholder-gray-400">
-                    <button class="bg-navy-900 text-gold-500 w-10 h-10 flex items-center justify-center hover:bg-gold-500 hover:text-navy-900 transition-colors flex-shrink-0">
-                        <i class="fa-solid fa-paper-plane text-sm"></i>
+            <div class="p-3 md:p-4 bg-white border-t border-gray-100">
+                <div class="flex items-center gap-2 border border-gray-200 bg-surface-50 p-1 focus-within:border-rawGold-500 transition-colors">
+                    <input type="text" placeholder="Type inquiry..." class="w-full bg-transparent border-none px-2 md:px-3 py-2 text-xs md:text-sm focus:outline-none text-rawNavy-900 placeholder-gray-400">
+                    <button class="bg-rawNavy-900 text-rawGold-500 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center hover:bg-rawGold-500 hover:text-rawNavy-900 transition-colors flex-shrink-0">
+                        <i class="fa-solid fa-paper-plane text-xs md:text-sm"></i>
                     </button>
                 </div>
             </div>
         </div>
         
-        <button class="w-[72px] h-[72px] bg-navy-900 text-gold-500 shadow-premium flex items-center justify-center text-3xl hover:scale-110 transition-transform duration-500 border-2 border-gold-500/50 relative z-[102] rounded-none">
+        <button class="w-14 h-14 md:w-[72px] md:h-[72px] bg-rawNavy-900 text-rawGold-500 shadow-premium flex items-center justify-center text-2xl md:text-3xl hover:scale-110 transition-transform duration-500 border-2 border-rawGold-500/50 relative z-[102] rounded-none">
             <i class="fa-solid fa-headset"></i>
-            <span class="absolute -top-2 -right-2 flex h-5 w-5">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-500 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-5 w-5 bg-gold-500 border-2 border-navy-900"></span>
-            </span>
         </button>
     </div>
 
     <script>
-        AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
+        // Init Animations
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
 
+        // Sticky Navbar Effect
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -781,59 +1315,29 @@
                 navbar.classList.remove('top-0');
             }
         });
-        
-        // Initialize AOS animations
-        AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-premium');
-                navbar.classList.remove('top-8');
-                navbar.classList.add('top-0');
-            } else {
-                navbar.classList.remove('shadow-premium');
-                navbar.classList.add('top-8');
-                navbar.classList.remove('top-0');
-            }
-        });
-
-        // Mobile Menu Logic
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileIcon = document.getElementById('mobile-menu-icon');
+        // Mobile Menu Toggle Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        function toggleMenu() {
-            const isOpen = mobileMenu.classList.contains('translate-y-0');
-            
-            if (isOpen) {
-                // Close Menu
-                mobileMenu.classList.remove('translate-y-0', 'opacity-100', 'visible');
-                mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'invisible');
-                mobileIcon.classList.remove('fa-xmark');
-                mobileIcon.classList.add('fa-bars-staggered');
-            } else {
-                // Open Menu
-                mobileMenu.classList.remove('-translate-y-full', 'opacity-0', 'invisible');
-                mobileMenu.classList.add('translate-y-0', 'opacity-100', 'visible');
-                mobileIcon.classList.remove('fa-bars-staggered');
-                mobileIcon.classList.add('fa-xmark');
-            }
-        }
+        btn.addEventListener('click', () => {
+            menu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        });
 
-        mobileBtn.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', () => {
+            menu.classList.add('translate-x-full');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        });
 
-        // Auto-close menu when a link is clicked
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if(mobileMenu.classList.contains('translate-y-0')) {
-                    toggleMenu();
-                }
+                menu.classList.add('translate-x-full');
+                document.body.style.overflow = 'auto'; 
             });
         });
     </script>
-    
 </body>
 </html>
