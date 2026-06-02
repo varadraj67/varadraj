@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request A Quote | Rawmat Resources</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        rawNavy: {
+                            900: '#0D1B2A', 
+                            800: '#152A40',
+                            700: '#1D3A57',
+                        },
+                        rawGold: {
+                            300: '#E8D08D',
+                            400: '#D4B25E',
+                            500: '#C19A3B', 
+                            600: '#A38047',
+                        },
+                        rawBlue: {
+                            500: '#2196F3', 
+                        },
+                        rawGreen: {
+                            500: '#75B726', 
+                        },
+                        surface: {
+                            50: '#F8FAFC',
+                            100: '#F1F5F9',
+                            200: '#E2E8F0',
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 40px -10px rgba(13, 27, 42, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { background-color: #F1F5F9; color: #0D1B2A; }
+        ::selection { background: #C19A3B; color: #0D1B2A; }
+    </style>
+</head>
+<body class="antialiased font-sans min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+
+    <div class="w-full max-w-5xl mx-auto">
+        <!-- Header -->
+        <div class="mb-8 text-left px-4">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-rawNavy-900">Request a quote</h2>
+            <p class="text-gray-500 mt-2 text-sm">Please provide your requirements, and our corporate team will get back to you.</p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="bg-white rounded-2xl shadow-premium border border-gray-200 p-6 md:p-10 mx-4">
+            <form id="quoteForm" novalidate class="space-y-6">
+                
+                <!-- ROW 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Request Type -->
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Request type <span class="text-red-500">*</span></label>
+                        <div class="relative">
+                            <select id="reqType" required class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors appearance-none cursor-pointer">
+                                <option value="" disabled selected>Select request type...</option>
+                                <option value="buyer">I am a buyer (RFQ)</option>
+                                <option value="seller">I am a seller (Offer)</option>
+                                <option value="logistics">Logistics / Chartering</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+                        <span class="error-msg text-red-500 text-xs hidden">Please select a request type.</span>
+                    </div>
+                    
+                    <!-- Incoterms -->
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Incoterms <span class="text-red-500">*</span></label>
+                        <div class="relative">
+                            <select id="incoterms" required class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors appearance-none cursor-pointer">
+                                <option value="none">—</option>
+                                <option value="FOB">FOB (Free on Board)</option>
+                                <option value="CIF">CIF (Cost, Insurance, and Freight)</option>
+                                <option value="EXW">EXW (Ex Works)</option>
+                                <option value="DDP">DDP (Delivered Duty Paid)</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROW 2 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Product / item <span class="text-red-500">*</span></label>
+                        <input type="text" id="product" required minlength="3" placeholder="e.g., wheat / cashews / packaging film / spare parts" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 placeholder-gray-400 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors">
+                        <span class="error-msg text-red-500 text-xs hidden">Please enter a valid product name (min 3 characters).</span>
+                    </div>
+                    
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Quantity <span class="text-red-500">*</span></label>
+                        <input type="text" id="quantity" required placeholder="e.g., 1x20' / 24 pallets / 10,000 units" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 placeholder-gray-400 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors">
+                        <span class="error-msg text-red-500 text-xs hidden">Please specify the quantity required.</span>
+                    </div>
+                </div>
+
+                <!-- ROW 3 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Origin country</label>
+                        <input type="text" placeholder="e.g., Turkey / Vietnam" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 placeholder-gray-400 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors">
+                    </div>
+                    
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Destination (country / city) <span class="text-red-500">*</span></label>
+                        <input type="text" id="destination" required placeholder="e.g., UAE, Dubai / KZ, Astana" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 placeholder-gray-400 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors">
+                        <span class="error-msg text-red-500 text-xs hidden">Please provide a valid destination.</span>
+                    </div>
+                </div>
+
+                <!-- ROW 4 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Target timeline</label>
+                        <input type="text" placeholder="e.g., ASAP / Q2 / by 15 March" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 placeholder-gray-400 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors">
+                    </div>
+                    
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Preferred payment terms</label>
+                        <input type="text" placeholder="e.g., prepayment / LC / split" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 placeholder-gray-400 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors">
+                    </div>
+                </div>
+
+                <!-- Details (Full Width) -->
+                <div class="flex flex-col gap-1.5">
+                    <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Details</label>
+                    <textarea rows="4" placeholder="Specs, packing, quality requirements, HS code (if any), documents required..." class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 placeholder-gray-400 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors resize-y"></textarea>
+                </div>
+
+                <!-- ROW 5 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Your name <span class="text-red-500">*</span></label>
+                        <input type="text" id="name" required minlength="2" placeholder="Full name" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 placeholder-gray-400 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors">
+                        <span class="error-msg text-red-500 text-xs hidden">Your name is required.</span>
+                    </div>
+                    
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Company <span class="text-red-500">*</span></label>
+                        <input type="text" id="company" required placeholder="Company name" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 placeholder-gray-400 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors">
+                        <span class="error-msg text-red-500 text-xs hidden">Company name is required.</span>
+                    </div>
+                </div>
+
+                <!-- ROW 6 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Email <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="name@company.com" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 placeholder-gray-400 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors">
+                        <span class="error-msg text-red-500 text-xs hidden">Please enter a valid corporate email address.</span>
+                    </div>
+                    
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Phone / WhatsApp <span class="text-red-500">*</span></label>
+                        <input type="tel" id="phone" required pattern="[\+]\d{10,15}|\d{10,15}" placeholder="+44... / +971..." class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 placeholder-gray-400 focus:outline-none focus:border-rawGold-500 focus:ring-1 focus:ring-rawGold-500 transition-colors">
+                        <span class="error-msg text-red-500 text-xs hidden">Valid phone number required (min 10 digits).</span>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+    <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">
+        Upload Document (CIS / Specs) <span class="text-red-500">*</span>
+    </label>
+    
+    <input type="file" id="document" name="document" required
+        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+        class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-2.5 text-sm text-rawNavy-900 
+               file:mr-4 file:py-1.5 file:px-4 file:rounded-md file:border-0 
+               file:text-xs file:font-bold file:uppercase file:tracking-wider
+               file:bg-rawNavy-900 file:text-white hover:file:bg-rawGold-500 hover:file:text-rawNavy-900
+               file:cursor-pointer cursor-pointer
+               focus:outline-none focus:border-rawGold-500 transition-colors">
+    
+    <p class="text-[11px] text-gray-400">Accepted formats: PDF, DOCX, JPG (Max: 10MB)</p>
+    <span class="error-msg text-red-500 text-xs hidden">Please upload a valid document.</span>
+</div>
+                </div>
+
+                <!-- Consent Checkbox -->
+                <div class="flex items-start gap-3 mt-4">
+                    <div class="flex items-center h-5">
+                        <input id="consent" type="checkbox" required class="w-4 h-4 border-gray-300 rounded text-rawGold-500 focus:ring-rawGold-500 bg-surface-50 cursor-pointer">
+                    </div>
+                    <label for="consent" class="text-xs text-gray-500 leading-relaxed cursor-pointer selection:bg-transparent">
+                        I consent to be contacted regarding this request and acknowledge that submitted information will be processed for quotation and communication purposes. <span class="text-red-500">*</span>
+                    </label>
+                </div>
+                <span id="consent-error" class="error-msg text-red-500 text-xs hidden ml-7">You must consent to proceed.</span>
+
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 pt-6 border-t border-gray-100 mt-6">
+                    <button type="submit" class="w-full sm:w-auto bg-rawBlue-500 text-white px-8 py-3.5 rounded-full font-bold text-sm tracking-wide shadow-md hover:bg-rawNavy-900 hover:shadow-lg transition-all duration-300">
+                        Send request
+                    </button>
+                    <a href="mailto:office@rawmatz.com" class="w-full sm:w-auto border border-gray-200 bg-white text-rawNavy-900 px-8 py-3.5 rounded-full font-bold text-sm text-center hover:border-rawGold-500 hover:text-rawGold-500 transition-all duration-300">
+                        office@rawmatz.com
+                    </a>
+                    <a href="supplier form.html" class="w-full sm:w-auto border border-gray-200 bg-white text-rawNavy-900 px-8 py-3.5 rounded-full font-bold text-sm text-center hover:border-rawGold-500 hover:text-rawGold-500 transition-all duration-300">
+                        for supplier
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Validation JavaScript -->
+    <script>
+        document.getElementById('quoteForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            let isValid = true;
+            const form = event.target;
+            const inputs = form.querySelectorAll('input[required], select[required]');
+            
+            inputs.forEach(input => {
+                const errorMsg = input.parentElement.querySelector('.error-msg') || document.getElementById(input.id + '-error');
+                
+                if (!input.checkValidity()) {
+                    isValid = false;
+                    input.classList.remove('border-gray-200', 'focus:border-rawGold-500');
+                    input.classList.add('border-red-500', 'focus:border-red-500', 'bg-red-50');
+                    if(errorMsg) errorMsg.classList.remove('hidden');
+                } else {
+                    input.classList.remove('border-red-500', 'focus:border-red-500', 'bg-red-50');
+                    input.classList.add('border-gray-200', 'focus:border-rawGold-500');
+                    if(errorMsg) errorMsg.classList.add('hidden');
+                }
+            });
+
+            // Checkbox validation
+            const consent = document.getElementById('consent');
+            const consentError = document.getElementById('consent-error');
+            if(!consent.checked) {
+                isValid = false;
+                consentError.classList.remove('hidden');
+            } else {
+                consentError.classList.add('hidden');
+            }
+
+            if (isValid) {
+                const btn = form.querySelector('button[type="submit"]');
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Sending...';
+                btn.classList.replace('bg-rawBlue-500', 'bg-rawGreen-500');
+                btn.disabled = true;
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> Request Sent Successfully!';
+                    form.reset(); 
+                    btn.disabled = false;
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = 'Send request';
+                        btn.classList.replace('bg-rawGreen-500', 'bg-rawBlue-500');
+                    }, 3000);
+                }, 1500);
+            } else {
+                const firstError = form.querySelector('.border-red-500');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+
+        // Real-time error removal
+        document.querySelectorAll('#quoteForm input, #quoteForm select').forEach(element => {
+            element.addEventListener('input', function() {
+                if (this.checkValidity()) {
+                    this.classList.remove('border-red-500', 'focus:border-red-500', 'bg-red-50');
+                    this.classList.add('border-gray-200', 'focus:border-rawGold-500');
+                    const errorMsg = this.parentElement.querySelector('.error-msg') || document.getElementById(this.id + '-error');
+                    if(errorMsg) errorMsg.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

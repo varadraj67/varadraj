@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor & Commercial Registration | Rawmat</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], serif: ['Cinzel', 'serif'] },
+                    colors: {
+                        rawNavy: { 900: '#0D1B2A', 800: '#152A40', 700: '#1D3A57' },
+                        rawGold: { 300: '#E8D08D', 400: '#D4B25E', 500: '#C19A3B', 600: '#A38047' },
+                        rawBlue: { 500: '#2196F3' },
+                        rawGreen: { 500: '#75B726' },
+                        surface: { 50: '#F8FAFC', 100: '#F1F5F9' }
+                    },
+                    boxShadow: { 'premium': '0 20px 40px -10px rgba(13, 27, 42, 0.1)' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-100 antialiased font-sans py-12 px-4 sm:px-6 lg:px-8">
+
+    <div class="w-full max-w-5xl mx-auto">
+        <!-- Header -->
+        <div class="mb-8 px-4">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-rawNavy-900">Commercial & Vendor Onboarding</h2>
+            <p class="text-gray-500 mt-2 text-sm">Please provide your company profile, industrial capacity, and commercial offer details.</p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="bg-white rounded-2xl shadow-premium border border-gray-200 p-6 md:p-10 mx-4">
+            <form id="commercialForm" action="submit_commercial.php" method="POST" enctype="multipart/form-data" novalidate class="space-y-8">
+                
+                <!-- SECTION 1: Company Details -->
+                <div>
+                    <h3 class="text-xs font-bold text-rawGold-600 uppercase tracking-widest mb-4 pb-2 border-b border-gray-100">1. Company Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Registered Company Name *</label>
+                            <input type="text" name="company_name" required placeholder="e.g., Rawmat Trading LLC" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 focus:outline-none focus:border-rawGold-500 transition-colors">
+                            <span class="error-msg text-red-500 text-xs hidden">Company name is required.</span>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Tax ID / Registration Number *</label>
+                            <input type="text" name="tax_id" required placeholder="e.g., GSTIN / VAT Number" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 focus:outline-none focus:border-rawGold-500 transition-colors">
+                            <span class="error-msg text-red-500 text-xs hidden">Tax ID / Registration number is required.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: Personal Details -->
+                <div>
+                    <h3 class="text-xs font-bold text-rawGold-600 uppercase tracking-widest mb-4 pb-2 border-b border-gray-100">2. Personal / Contact Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Contact Person Name *</label>
+                            <input type="text" name="contact_name" required placeholder="Full Name" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 focus:outline-none focus:border-rawGold-500 transition-colors">
+                            <span class="error-msg text-red-500 text-xs hidden">Contact name is required.</span>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Official Email *</label>
+                            <input type="email" name="email" required placeholder="name@company.com" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 focus:outline-none focus:border-rawGold-500 transition-colors">
+                            <span class="error-msg text-red-500 text-xs hidden">Valid email is required.</span>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Phone / WhatsApp *</label>
+                            <input type="tel" name="phone" required placeholder="+44..." class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 focus:outline-none focus:border-rawGold-500 transition-colors">
+                            <span class="error-msg text-red-500 text-xs hidden">Phone number is required.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: Industrial Details -->
+                <div>
+                    <h3 class="text-xs font-bold text-rawGold-600 uppercase tracking-widest mb-4 pb-2 border-b border-gray-100">3. Industrial Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Industry Sector *</label>
+                            <div class="relative">
+                                <select name="industry_sector" required class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 focus:outline-none focus:border-rawGold-500 appearance-none cursor-pointer">
+                                    <option value="" disabled selected>Select industry sector...</option>
+                                    <option value="agriculture">Agriculture & Agro-commodities</option>
+                                    <option value="mining">Mining & Minerals</option>
+                                    <option value="chemicals">Chemicals & Polymers</option>
+                                    <option value="logistics">Supply Chain & Logistics</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500"><i class="fa-solid fa-chevron-down text-xs"></i></div>
+                            </div>
+                            <span class="error-msg text-red-500 text-xs hidden">Please select an industry sector.</span>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Factory / Plant Location *</label>
+                            <input type="text" name="factory_location" required placeholder="City, Country" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 focus:outline-none focus:border-rawGold-500 transition-colors">
+                            <span class="error-msg text-red-500 text-xs hidden">Location is required.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: Certifications & Profile Uploads -->
+                <div>
+                    <h3 class="text-xs font-bold text-rawGold-600 uppercase tracking-widest mb-4 pb-2 border-b border-gray-100">4. Certifications & Profiles</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Certifications -->
+                       <div class="flex flex-col gap-1.5">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Certifications</label>
+                            <input type="file" id="company_profile" name="company_profile" required accept=".pdf,.doc,.docx"
+                                class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-2 text-sm text-rawNavy-900 file:mr-3 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:font-bold file:bg-rawNavy-900 file:text-white hover:file:bg-rawGold-500 hover:file:text-rawNavy-900 file:cursor-pointer cursor-pointer">
+                            <span class="error-msg text-red-500 text-xs hidden">Company profile file is required.</span>
+                        </div>
+                        
+                        <!-- Company Profile Upload -->
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Company Profile *</label>
+                            <input type="file" id="company_profile" name="company_profile" required accept=".pdf,.doc,.docx"
+                                class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-2 text-sm text-rawNavy-900 file:mr-3 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:font-bold file:bg-rawNavy-900 file:text-white hover:file:bg-rawGold-500 hover:file:text-rawNavy-900 file:cursor-pointer cursor-pointer">
+                            <span class="error-msg text-red-500 text-xs hidden">Company profile file is required.</span>
+                        </div>
+
+                        <!-- CIS (Client Information Sheet) Upload -->
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">CIS (Client Information Sheet) *</label>
+                            <input type="file" id="cis_document" name="cis_document" required accept=".pdf,.doc,.docx"
+                                class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-2 text-sm text-rawNavy-900 file:mr-3 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:font-bold file:bg-rawNavy-900 file:text-white hover:file:bg-rawGold-500 hover:file:text-rawNavy-900 file:cursor-pointer cursor-pointer">
+                            <span class="error-msg text-red-500 text-xs hidden">CIS document file is required.</span>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-gray-400 mt-2">Accepted document formats: PDF, DOCX (Max: 10MB per file)</p>
+                </div>
+
+                <!-- SECTION 5: Commercial Details (Quantity & Price) -->
+                <div>
+                    <h3 class="text-xs font-bold text-rawGold-600 uppercase tracking-widest mb-4 pb-2 border-b border-gray-100">5. Commercial Offer Details</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Total Quantity Offered / Required *</label>
+                            <input type="text" name="quantity" required placeholder="e.g., 500 MT / 5 Containers" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 focus:outline-none focus:border-rawGold-500 transition-colors">
+                            <span class="error-msg text-red-500 text-xs hidden">Please specify quantity.</span>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Target Price (per Unit) *</label>
+                            <input type="text" name="price" required placeholder="e.g., $450 USD / MT" class="w-full bg-surface-50 border border-gray-200 rounded-lg px-4 py-3 text-sm text-rawNavy-900 focus:outline-none focus:border-rawGold-500 transition-colors">
+                            <span class="error-msg text-red-500 text-xs hidden">Please specify price.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms Consent -->
+                <div class="flex items-start gap-3 pt-2">
+                    <div class="flex items-center h-5">
+                        <input id="consent" name="consent" type="checkbox" required class="w-4 h-4 border-gray-300 rounded text-rawGold-500 focus:ring-rawGold-500 bg-surface-50 cursor-pointer">
+                    </div>
+                    <label for="consent" class="text-xs text-gray-500 leading-relaxed cursor-pointer select-none">
+                        I confirm that the industrial credentials, files, and commercial prices detailed above are valid and authorized. *
+                    </label>
+                </div>
+                <span id="consent-error" class="error-msg text-red-500 text-xs hidden block ml-7">Consent verification is required.</span>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 pt-6 border-t border-gray-100">
+                    <button type="submit" class="w-full sm:w-auto bg-rawBlue-500 text-white px-8 py-3.5 rounded-full font-bold text-sm tracking-wide shadow-md hover:bg-rawNavy-900 hover:shadow-lg transition-all duration-300">
+                        Submit Commercial Registration
+                    </button>
+                    <a href="#" class="w-full sm:w-auto border border-gray-200 bg-white text-rawNavy-900 px-8 py-3.5 rounded-full font-bold text-sm text-center hover:border-rawGold-500 transition-all duration-300">
+                        Back
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Validation -->
+    <script>
+        document.getElementById('commercialForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let isValid = true;
+            const form = event.target;
+            
+            // Required inputs & selects validation
+            form.querySelectorAll('input[required], select[required]').forEach(input => {
+                const errorMsg = input.parentElement.querySelector('.error-msg') || document.getElementById(input.id + '-error');
+                
+                if (!input.checkValidity()) {
+                    isValid = false;
+                    input.classList.add('border-red-500', 'bg-red-50');
+                    if(errorMsg) errorMsg.classList.remove('hidden');
+                } else {
+                    input.classList.remove('border-red-500', 'bg-red-50');
+                    if(errorMsg) errorMsg.classList.add('hidden');
+                }
+            });
+
+            // Document size check (Max 5MB)
+            const files = ['company_profile', 'cis_document'];
+            files.forEach(id => {
+                const fileInput = document.getElementById(id);
+                const fileError = fileInput.parentElement.querySelector('.error-msg');
+                if (fileInput.files.length > 0 && fileInput.files[0].size > 5242880) {
+                    isValid = false;
+                    fileInput.classList.add('border-red-500', 'bg-red-50');
+                    if(fileError) {
+                        fileError.innerText = "File size limit exceeded (Max 5MB).";
+                        fileError.classList.remove('hidden');
+                    }
+                }
+            });
+
+            // Checkbox consent check
+            const consent = document.getElementById('consent');
+            const consentError = document.getElementById('consent-error');
+            if(!consent.checked) {
+                isValid = false;
+                consentError.classList.remove('hidden');
+            } else {
+                consentError.classList.add('hidden');
+            }
+
+            if (isValid) {
+                const btn = form.querySelector('button[type="submit"]');
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Processing...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> Registration Successful!';
+                    btn.classList.replace('bg-rawBlue-500', 'bg-rawGreen-500');
+                    form.reset();
+                    setTimeout(() => {
+                        btn.innerHTML = 'Submit Commercial Registration';
+                        btn.classList.replace('bg-rawGreen-500', 'bg-rawBlue-500');
+                        btn.disabled = false;
+                    }, 3000);
+                }, 1500);
+            }
+        });
+
+        // Clear error styling on user input
+        document.querySelectorAll('#commercialForm input, #commercialForm select').forEach(element => {
+            element.addEventListener('input', function() {
+                if (this.checkValidity()) {
+                    this.classList.remove('border-red-500', 'bg-red-50');
+                    const errorMsg = this.parentElement.querySelector('.error-msg') || document.getElementById(this.id + '-error');
+                    if(errorMsg) errorMsg.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
